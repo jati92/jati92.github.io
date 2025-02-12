@@ -677,13 +677,14 @@ function success(pos) {
     circle = L.circle([lat, lng], { radius: accuracy }).addTo(map);
     // Adds marker to the map and a circle for accuracy
 
-    if (!zoomed) {
-        zoomed = map.fitBounds(circle.getBounds()); 
-    }
-    // Set zoom to boundaries of accuracy circle
 
-    map.setView([lat, lng]);
-    // Set map focus to current user position
+  <!--  if (!zoomed) {
+  <!--      zoomed = map.fitBounds(circle.getBounds()); 
+  <!--  }
+  <!--  // Set zoom to boundaries of accuracy circle
+
+  <!--  map.setView([lat, lng]);
+  <!--  // Set map focus to current user position
 
 }
 
