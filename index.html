@@ -548,7 +548,23 @@ max-height: 100%;
 
 
 
+<!-- ICON KusumaMart-icon
+	const KusumaMartIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'icon/KusumaMart-icon.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
 
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const KusumaMartIcons = new KusumaMartIcon({iconUrl: 'icon/KusumaMart-icon.png'});	
+	
+	
+	
+	
 	
 <!-- LOKASI PASAR
 
@@ -1050,6 +1066,8 @@ const IndomaretIpdaTutHarsono = L.marker([-7.797907044988315, 110.39267613343077
 const IndomaretKotagede = L.marker([-7.819529827078148, 110.39631088592716], {icon: IndomaretIcons})
 .bindPopup('<b>Indomaret Kotagede</b><br/>Jl. Ngeksigondo No.11, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br><br> <img src="./supermarket/IndomaretKotagede1.png" style="width:200px">');
 
+const IndomaretHybridKusumanegara = L.marker([-7.801811287921426, 110.3895962176911], {icon: IndomaretIcons})
+.bindPopup('<b>Indomaret Hybrid Kusumanegara</b><br/>Jl. Kusumanegara No.129, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55164<br><br> <img src="./supermarket/IndomaretHybridKusumanegara1.png" style="width:200px">');
 
 
 
@@ -1150,14 +1168,17 @@ const KarumaMart = L.marker([-7.813872721059891, 110.37628169286943], {icon: Kar
 const RenesSwalayan = L.marker([-7.76990027325018, 110.36152264233392], {icon: RenesIcons})
 .bindPopup('<b>Renes Swalayan</b><br/>Jl. Magelang Jl. Karangwaru Lor No.Km. 4 No.200, Karangwaru, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55242<br>(0274)580404<br><br> <img src="./supermarket/RenesSwalayan1.png" style="width:200px">');
 
-
 const IntiSari = L.marker([-7.7944140159953506, 110.3776844722303], {icon: IntiSariIcons})
 .bindPopup('<b>Inti Sari Dr. Sutomo</b><br/>Jl. Doktor Sutomo No.29, Bausasran, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55211<br>(0274)550639<br><br> <img src="./supermarket/IntiSari1.png" style="width:200px">');
 
+const KusumaMart = L.marker([-7.80211703607521, 110.38831041963712], {icon: KusumaMartIcons})
+.bindPopup('<b>Kusuma Mart</b><br/>Jl. Kusumanegara No.64, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55164<br><br> <img src="./supermarket/KusumaMart1.png" style="width:200px">');
 
 
 
-const modern = L.layerGroup([SCBN1, AlfamidiTritunggal, IndomaretGiwangan, AlfamartGiwangan, IndomaretFreshPramuka, IndomaretGedongKuning112, IndomaretPurbayan, AlfamartNgeksigondo, SuperindoKotagede, IndomaretPerintisKemerdekaan, IndomaretMenteriSupeno, MirotaKampusMenteriSupeno, IndomaretBrigjenKatamso, LogMartMayjendSutoyo, IndomaretWahidHasyim, IndomaretAhmadDahlan, TokoProgo, IndomaretHayamWuruk, IndomaretTunjungBaru, AlfamartAMSangaji, CircleKAMSangaji, IndomaretAMSangaji68, MannaKampusSimanjuntak, Citrouli, IndomaretUripSumoharjo, Gardena, SuperindoUripSumoharjo, AlfamidiGondokusuman, IndomaretWahidinNo60, CircleKDRWahidinKorner, AlfamartTimoho, IndomaretTimoho, CircleKTimoho, AlfamidiTimoho, IndomaretWirosaban, PamelaDelapan, IndomaretLowanu, AlfamartLowanu, PamellaEmpat, IndomaretCemara, AlfamartGambiran, IndomaretSorogenen, IndomaretGambiran, AlfamidiKiPenjawi, IndomaretRejowinangun, IndomaretVeteran23, IndomaretBabaran, PamellaDuaSwalayan, PeniSwalayan, AlfamartGlagahsari, AlfamartGedongkuning, PamellaSupermarket, SuperindoSultanAgung, AlfamartAhmadDahlan, IndomaretWirobrajan, SariJaya, AlfamidiREMartadinata, IndomaretPiereTendean, IndomaretKricak, IndomaretJambon, ProgoMartJambon, IndomaretFreshJetis, IndomaretSagan, IndomaretMangkubumi, AlfamartGowongan, AlfamartBumijo, AlfamartPembelaTanahAir, IndomaretHOSCokroaminoto, AlfaMidiSuper, IndomaretHosCokroaminoto91, IndomaretPakuncen, IndomaretSugengJeroni, IndomaretBantul , AlfamidiSupermarket, SuperindoBantul, MagaSupermarket, CircleKPrawirotaman, LawsonParangtritis, AlfamidiParangtritis , PurnamaSwalayanKarangkajen, AlfamartSisingamangaraja, IndomaretSisingamangaraja, KarumaMart, AlfamidiTamanSiswa2, IndomaretBatikan, IndomaretFreshYosSudarso, AlfamartDrSutomo, LawsonDRSoetomo, IndomaretDRSoetomo, IndomaretGondokusuman, AlfamartMojo, IndomaretMojo, IndomaretCendana , CircleKPasarKembang, AlfamartPasarKembang, AlfamidiPringgokusuman, IndomaretBhayangkara, IndomaretKHWahidHasyim, IndomaretLetjendSuprapto, IndomaretYudonegaran, IndomaretKatamso, AlfamartParangtritis, AlfamartMargoUtomoYogyakarta, AlfamartGajahMada, IndomaretPakualaman, AlfamartVeteran, CircleKDagen, AlfamartDagenYogyakarta, AlfamartKiAgengPemanahan, IndomaretSorosutan, SuperIndoParangtritis, AlfamartMenteriSupeno, AlfamartDIPanjaitan, IndomaretTamanSiswa, AlfaX, AlfamidiTamanSiswa, IndomaretMataramYK, IndomaretPointMalioboroII, AlfamartMalioboro, SuperIndoXTSquare, IndomaretJogokaryan, IndomaretDIPanjaitan, RenesSwalayan, AlfamartJlMagelang, IndomaretJlMagelang, IndomaretFreshDrSardjito, LawsonStoreAmSangaji, IndomaretIpdaTutHarsono, IntiSari, IndomaretKotagede, AlfamartPurbayan, ]);
+
+
+const modern = L.layerGroup([SCBN1, AlfamidiTritunggal, IndomaretGiwangan, AlfamartGiwangan, IndomaretFreshPramuka, IndomaretGedongKuning112, IndomaretPurbayan, AlfamartNgeksigondo, SuperindoKotagede, IndomaretPerintisKemerdekaan, IndomaretMenteriSupeno, MirotaKampusMenteriSupeno, IndomaretBrigjenKatamso, LogMartMayjendSutoyo, IndomaretWahidHasyim, IndomaretAhmadDahlan, TokoProgo, IndomaretHayamWuruk, IndomaretTunjungBaru, AlfamartAMSangaji, CircleKAMSangaji, IndomaretAMSangaji68, MannaKampusSimanjuntak, Citrouli, IndomaretUripSumoharjo, Gardena, SuperindoUripSumoharjo, AlfamidiGondokusuman, IndomaretWahidinNo60, CircleKDRWahidinKorner, AlfamartTimoho, IndomaretTimoho, CircleKTimoho, AlfamidiTimoho, IndomaretWirosaban, PamelaDelapan, IndomaretLowanu, AlfamartLowanu, PamellaEmpat, IndomaretCemara, AlfamartGambiran, IndomaretSorogenen, IndomaretGambiran, AlfamidiKiPenjawi, IndomaretRejowinangun, IndomaretVeteran23, IndomaretBabaran, PamellaDuaSwalayan, PeniSwalayan, AlfamartGlagahsari, AlfamartGedongkuning, PamellaSupermarket, SuperindoSultanAgung, AlfamartAhmadDahlan, IndomaretWirobrajan, SariJaya, AlfamidiREMartadinata, IndomaretPiereTendean, IndomaretKricak, IndomaretJambon, ProgoMartJambon, IndomaretFreshJetis, IndomaretSagan, IndomaretMangkubumi, AlfamartGowongan, AlfamartBumijo, AlfamartPembelaTanahAir, IndomaretHOSCokroaminoto, AlfaMidiSuper, IndomaretHosCokroaminoto91, IndomaretPakuncen, IndomaretSugengJeroni, IndomaretBantul , AlfamidiSupermarket, SuperindoBantul, MagaSupermarket, CircleKPrawirotaman, LawsonParangtritis, AlfamidiParangtritis , PurnamaSwalayanKarangkajen, AlfamartSisingamangaraja, IndomaretSisingamangaraja, KarumaMart, AlfamidiTamanSiswa2, IndomaretBatikan, IndomaretFreshYosSudarso, AlfamartDrSutomo, LawsonDRSoetomo, IndomaretDRSoetomo, IndomaretGondokusuman, AlfamartMojo, IndomaretMojo, IndomaretCendana , CircleKPasarKembang, AlfamartPasarKembang, AlfamidiPringgokusuman, IndomaretBhayangkara, IndomaretKHWahidHasyim, IndomaretLetjendSuprapto, IndomaretYudonegaran, IndomaretKatamso, AlfamartParangtritis, AlfamartMargoUtomoYogyakarta, AlfamartGajahMada, IndomaretPakualaman, AlfamartVeteran, CircleKDagen, AlfamartDagenYogyakarta, AlfamartKiAgengPemanahan, IndomaretSorosutan, SuperIndoParangtritis, AlfamartMenteriSupeno, AlfamartDIPanjaitan, IndomaretTamanSiswa, AlfaX, AlfamidiTamanSiswa, IndomaretMataramYK, IndomaretPointMalioboroII, AlfamartMalioboro, SuperIndoXTSquare, IndomaretJogokaryan, IndomaretDIPanjaitan, RenesSwalayan, AlfamartJlMagelang, IndomaretJlMagelang, IndomaretFreshDrSardjito, LawsonStoreAmSangaji, IndomaretIpdaTutHarsono, IntiSari, IndomaretKotagede, AlfamartPurbayan, IndomaretHybridKusumanegara, KusumaMart, ]);
 
 layerControl.addOverlay(modern, 'Super Market');
 
@@ -1614,6 +1635,14 @@ const MbahMardiBroiler = L.marker([-7.8133106544022235, 110.39555564047349], {ic
 const WarungMaduraDuaPutri = L.marker([-7.813480984747378, 110.39515242260377], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Madura Dua Putri</b><br/>Jl. Ki Penjawi, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br><br> <img src="./pedagang/WarungMaduraDuaPutri1.png" style="width:200px">');
 
+const TokoNugroho = L.marker([-7.804326443451054, 110.39475066743485], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Nugroho</b><br/>Jl. Veteran No.18, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55165<br>087839938000<br><br> <img src="./pedagang/TokoNugroho1.png" style="width:200px">');
+
+const TokoAdindaSembakoMadura = L.marker([-7.802198918015609, 110.39233519678962], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Adinda Sembako Madura</b><br/>Jl. Kusumanegara No.144, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55165<br><br> <img src="./pedagang/TokoAdindaSembakoMadura1.png" style="width:200px">');
+
+const WarungBuIs = L.marker([-7.802234689216762, 110.3879555899013], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Bu Is</b><br/>Jl. Kusumanegara Gg. Glagahwangi, Warungboto, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55164<br>(0274)374574<br><br> <img src="./pedagang/WarungBuIs1.png" style="width:200px">');
 
 
 
@@ -1626,7 +1655,8 @@ const WarungMaduraDuaPutri = L.marker([-7.813480984747378, 110.39515242260377], 
 
 
 
-const sembako = L.layerGroup([AlifMart, Rizky, SembakoSubur, Arba, PakBudi, SumberRejeki, Tio, TokoFWR, SRSembako, SCBN2, TokoBerasAcar, TokoBerasBuAtik, SembakoBuEvi, BayuSembako, TokoHafid, TokoKencana, BerasFanda, GyangSembako, WarungSembakoYulah, SRCSarwidjiMM, IndotokoMinimarket, PengokJayaSRC, WiwaraMinimarket, WarungSayurdanSembakoSumberPangan, TimohoJaya, DepotDagingMubarakah, MinimarketRRKios, TokoBasuki, WarungSayurMbakNop, TokoSembakoUDRiskoJaya, GrosirBuahSSA, TokoRayyaGrosir, ABSembako, DepotSusuSapiKambing, KiosBuahBuIda, TokoKelontongRizqiRuhi, TokoJuari, PondokBuahGlagahsari, JogjaBeef, TokoAneka, DepotDagingSapiBimoAsih, JuraganSayur29, GrosirBeras, WarungSembakoSRCBuTri, TokoSembakoPojok , SembakoEDEN88, CokroBerasGrosir, WarungBuSarjinah, UDMinyakBuMantri, SembakoRizkiBrontokusuman, SayurMayur24Jam, TokoBuMangun, SMSembako, WarungSR, JuraganSayur291, AbMartSegarPraktis, TokoMaduraADINDA, SembakoNadaPesanJaya, TokoSembakoCahayaPesanJayaII, TokoSRCAldi, BiruLautIndonesia, TokoWahyuBuahPakIrfan, TokoSakura, TokoMurni, WaroengeAfi, WarungMoroSeneng, WarungSayurBuWarni, WarungMaduraLIMNY, WarungBuah, WarungKepokJogja, WarungMaduraDIPanjaitan1, WarungGGSPDalanWaras, WarungGayatri, WarsedaTokoKelontong, TokoBuahMentari, TokoMaduraAlHariqi, TokoFortuna, TokoIjo, TokoBuahMMAJaya, TokoBuHartoKranggan, TokoMbakSari, KiosBuPonirah, KiosBuSutini, KiosBuPur, TokoSinarJaya, TokoBerkahJaya, TokoKelontongPakdheNo, TokoKembarSembako, TokoZaki, WarungSayurTentrem, TokoEndro, TokoHanif, TokoBuAsmo, TokoKelontongWarungBagja, SRCGajahPutihMalioboro, BerkatMart, AbieSembako, TokoWaserdaQR, TokoMurniDemangan, TokoMilaDemangan, WarungBuAnjar, TokoAisyah, WarungFadasyi, WarungSayurBuYani, PupaMeatShopPrawirotaman, AJ33GrosirAyamdanTelur, BestMeatBugisan, BestMeatUmbulharjo, TokoPaijoBuah, WarungKelontongPakSaliman, WarungMaduraNayzila, TokoSRCAndaJaya, TokoSRCZeera, WarungSayurdanSembakoBarokah, SahlunBuah, NgoriSembako, ErlangSembako, MaduraSaladinShop, WarungSadeBuah, KiosGrosirBerasdanGulaGayatri, TokoNaningGGSP, TokoNurGGSP, FajarBroiler, GedeMart, TokoNayaPrenggan, SembakodanGasPojokKarangGGSP, KiosSembakoLadang, TokoSholeh, DepotAyamSegarBuKoes, NutriviaDepotIkanSegar, WarungMbakNurSayur, WarungIbuDjazuli, RikaSembako, TokoArdanSRC, TokoBuDarnoGGSP, WarungMaduraPutraFaizBarokah, TokoHarumDRP, WarungSayurAmpera, WarungMaduraRejowinangun, WarungATFG, WarungGanbate, AmaniMinimarket, WarungMaduraBarokah, MbahMardiBroiler, WarungMaduraDuaPutri, ]);
+
+const sembako = L.layerGroup([AlifMart, Rizky, SembakoSubur, Arba, PakBudi, SumberRejeki, Tio, TokoFWR, SRSembako, SCBN2, TokoBerasAcar, TokoBerasBuAtik, SembakoBuEvi, BayuSembako, TokoHafid, TokoKencana, BerasFanda, GyangSembako, WarungSembakoYulah, SRCSarwidjiMM, IndotokoMinimarket, PengokJayaSRC, WiwaraMinimarket, WarungSayurdanSembakoSumberPangan, TimohoJaya, DepotDagingMubarakah, MinimarketRRKios, TokoBasuki, WarungSayurMbakNop, TokoSembakoUDRiskoJaya, GrosirBuahSSA, TokoRayyaGrosir, ABSembako, DepotSusuSapiKambing, KiosBuahBuIda, TokoKelontongRizqiRuhi, TokoJuari, PondokBuahGlagahsari, JogjaBeef, TokoAneka, DepotDagingSapiBimoAsih, JuraganSayur29, GrosirBeras, WarungSembakoSRCBuTri, TokoSembakoPojok , SembakoEDEN88, CokroBerasGrosir, WarungBuSarjinah, UDMinyakBuMantri, SembakoRizkiBrontokusuman, SayurMayur24Jam, TokoBuMangun, SMSembako, WarungSR, JuraganSayur291, AbMartSegarPraktis, TokoMaduraADINDA, SembakoNadaPesanJaya, TokoSembakoCahayaPesanJayaII, TokoSRCAldi, BiruLautIndonesia, TokoWahyuBuahPakIrfan, TokoSakura, TokoMurni, WaroengeAfi, WarungMoroSeneng, WarungSayurBuWarni, WarungMaduraLIMNY, WarungBuah, WarungKepokJogja, WarungMaduraDIPanjaitan1, WarungGGSPDalanWaras, WarungGayatri, WarsedaTokoKelontong, TokoBuahMentari, TokoMaduraAlHariqi, TokoFortuna, TokoIjo, TokoBuahMMAJaya, TokoBuHartoKranggan, TokoMbakSari, KiosBuPonirah, KiosBuSutini, KiosBuPur, TokoSinarJaya, TokoBerkahJaya, TokoKelontongPakdheNo, TokoKembarSembako, TokoZaki, WarungSayurTentrem, TokoEndro, TokoHanif, TokoBuAsmo, TokoKelontongWarungBagja, SRCGajahPutihMalioboro, BerkatMart, AbieSembako, TokoWaserdaQR, TokoMurniDemangan, TokoMilaDemangan, WarungBuAnjar, TokoAisyah, WarungFadasyi, WarungSayurBuYani, PupaMeatShopPrawirotaman, AJ33GrosirAyamdanTelur, BestMeatBugisan, BestMeatUmbulharjo, TokoPaijoBuah, WarungKelontongPakSaliman, WarungMaduraNayzila, TokoSRCAndaJaya, TokoSRCZeera, WarungSayurdanSembakoBarokah, SahlunBuah, NgoriSembako, ErlangSembako, MaduraSaladinShop, WarungSadeBuah, KiosGrosirBerasdanGulaGayatri, TokoNaningGGSP, TokoNurGGSP, FajarBroiler, GedeMart, TokoNayaPrenggan, SembakodanGasPojokKarangGGSP, KiosSembakoLadang, TokoSholeh, DepotAyamSegarBuKoes, NutriviaDepotIkanSegar, WarungMbakNurSayur, WarungIbuDjazuli, RikaSembako, TokoArdanSRC, TokoBuDarnoGGSP, WarungMaduraPutraFaizBarokah, TokoHarumDRP, WarungSayurAmpera, WarungMaduraRejowinangun, WarungATFG, WarungGanbate, AmaniMinimarket, WarungMaduraBarokah, MbahMardiBroiler, WarungMaduraDuaPutri, TokoNugroho, TokoAdindaSembakoMadura, WarungBuIs, ]);
 
 layerControl.addOverlay(sembako, 'Warung Sembako');
 
