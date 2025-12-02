@@ -1001,6 +1001,8 @@ const AlfamartPurbayan = L.marker([-7.819701547667749, 110.40134428256542], {ico
 const AlfamartSorogenenJogja = L.marker([-7.824681716197336, 110.38032496477753], {icon: AlfaMartIcons})
 .bindPopup('<b>Alfamart Sorogenen Jogja</b><br/>Jl. Sorogenen No.05, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55583<br><br> <img src="./supermarket/AlfamartSorogenenJogja1.png" style="width:200px">');
 
+const AlfamartBrigjenKatamso = L.marker([-7.805186364139819, 110.36948849413679], {icon: AlfaMartIcons})
+.bindPopup('<b>Alfamart Brigjen Katamso</b><br/>Jl. Brigjen Katamso No.67, Prawirodirjan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55121<br><br> <img src="./supermarket/AlfamartBrigjenKatamso1.png" style="width:200px">');
 
 
 
@@ -1194,6 +1196,12 @@ const IndomaretHybridKusumanegara = L.marker([-7.801811287921426, 110.3895962176
 const IndomaretParangtritis = L.marker([-7.81579915450215, 110.36846388389229], {icon: IndomaretIcons})
 .bindPopup('<b>Indomaret Parangtritis</b><br/>Jl. Parangtritis, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br><br> <img src="./supermarket/IndomaretParangtritis1.png" style="width:200px">');
 
+const IndomaretBausasran = L.marker([-7.796853270717005, 110.37460141496304], {icon: IndomaretIcons})
+.bindPopup('<b>Indomaret Bausasran</b><br/>Jl. Bausasran, Bausasran, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br><br> <img src="./supermarket/IndomaretBausasran.png" style="width:200px">');
+
+
+
+
 
 <!-- LOKASI CK
 const CircleKDRWahidinKorner = L.marker([-7.786651194235903, 110.37877732139337], {icon: CKIcons})
@@ -1217,8 +1225,11 @@ const CircleKPasarKembang = L.marker([-7.789942815684518, 110.36483846601645], {
 const CircleKBatasKota = L.marker([-7.783018926177777, 110.39124633596792], {icon: CKIcons})
 .bindPopup('<b>Circle K Batas Kota</b><br/>Jl. Laksda Adisucipto, Demangan, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55281<br>089522450407<br><br> <img src="./supermarket/CircleKBatasKota.png" style="width:200px">');
 
+const CircleKPrawirotaman2 = L.marker([-7.819217841713001, 110.3718722929767], {icon: CKIcons})
+.bindPopup('<b>Circle K Prawirotaman</b><br/>Jl. Prawirotaman No.35, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br>(021)8564454<br><br> <img src="./supermarket/CircleKPrawirotaman.png" style="width:200px">');
 
-
+const CircleKGajahmada = L.marker([-7.79698735588344, 110.3724971847683], {icon: CKIcons})
+.bindPopup('<b>Circle K Gajahmada</b><br/>Jl. Gajah Mada, Gunungketur, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br><br> <img src="./supermarket/CircleKGajahmada.png" style="width:200px">');
 
 
 
@@ -1327,7 +1338,7 @@ const USTMart = L.marker([-7.808952280846809, 110.38187753011178], {icon: USTMar
 
 
 
-const modern = L.layerGroup([SCBN1, AlfamidiTritunggal, IndomaretGiwangan, AlfamartGiwangan, IndomaretFreshPramuka, IndomaretGedongKuning112, IndomaretPurbayan, AlfamartNgeksigondo, SuperindoKotagede, IndomaretPerintisKemerdekaan, IndomaretMenteriSupeno, MirotaKampusMenteriSupeno, IndomaretBrigjenKatamso, LogMartMayjendSutoyo, IndomaretWahidHasyim, IndomaretAhmadDahlan, TokoProgo, IndomaretHayamWuruk, IndomaretTunjungBaru, AlfamartAMSangaji, CircleKAMSangaji, IndomaretAMSangaji68, MannaKampusSimanjuntak, Citrouli, IndomaretUripSumoharjo, SuperindoUripSumoharjo, AlfamidiGondokusuman, IndomaretWahidinNo60, CircleKDRWahidinKorner, AlfamartTimoho, IndomaretTimoho, CircleKTimoho, AlfamidiTimoho, IndomaretWirosaban, PamelaDelapan, IndomaretLowanu, AlfamartLowanu, PamellaEmpat, IndomaretCemara, AlfamartGambiran, IndomaretSorogenen, IndomaretGambiran, AlfamidiKiPenjawi, IndomaretRejowinangun, IndomaretVeteran23, IndomaretBabaran, PamellaDuaSwalayan, PeniSwalayan, AlfamartGlagahsari, AlfamartGedongkuning, PamellaSupermarket, SuperindoSultanAgung, AlfamartAhmadDahlan, IndomaretWirobrajan, SariJaya, AlfamidiREMartadinata, IndomaretPiereTendean, IndomaretKricak, IndomaretJambon, ProgoMartJambon, IndomaretFreshJetis, IndomaretSagan, IndomaretMangkubumi, AlfamartGowongan, AlfamartBumijo, AlfamartPembelaTanahAir, IndomaretHOSCokroaminoto, AlfaMidiSuper, IndomaretHosCokroaminoto91, IndomaretPakuncen, IndomaretSugengJeroni, IndomaretBantul , AlfamidiSupermarket, SuperindoBantul, MagaSupermarket, CircleKPrawirotaman, LawsonParangtritis, AlfamidiParangtritis , PurnamaSwalayanKarangkajen, AlfamartSisingamangaraja, IndomaretSisingamangaraja, KarumaMart, AlfamidiTamanSiswa2, IndomaretBatikan, IndomaretFreshYosSudarso, AlfamartDrSutomo, LawsonDRSoetomo, IndomaretDRSoetomo, IndomaretGondokusuman, AlfamartMojo, IndomaretMojo, IndomaretCendana , CircleKPasarKembang, AlfamartPasarKembang, AlfamidiPringgokusuman, IndomaretBhayangkara, IndomaretKHWahidHasyim, IndomaretLetjendSuprapto, IndomaretYudonegaran, IndomaretKatamso, AlfamartParangtritis, AlfamartMargoUtomoYogyakarta, AlfamartGajahMada, IndomaretPakualaman, AlfamartVeteran, CircleKDagen, AlfamartDagenYogyakarta, AlfamartKiAgengPemanahan, IndomaretSorosutan, SuperIndoParangtritis, AlfamartMenteriSupeno, AlfamartDIPanjaitan, IndomaretTamanSiswa, AlfaX, AlfamidiTamanSiswa, IndomaretMataramYK, IndomaretPointMalioboroII, AlfamartMalioboro, SuperIndoXTSquare, IndomaretJogokaryan, IndomaretDIPanjaitan, RenesSwalayan, AlfamartJlMagelang, IndomaretJlMagelang, IndomaretFreshDrSardjito, LawsonStoreAmSangaji, IndomaretIpdaTutHarsono, IntiSari, IndomaretKotagede, AlfamartPurbayan, IndomaretHybridKusumanegara, KusumaMart, IndomaretParangtritis, TokoMU, IndotokoMinimarket, WiwaraMinimarket, SASwalayan, AmaniMinimarket, BiasMart, AlfamidiVeteranJogja, DamaiIndah, AlfamartSorogenenJogja, USTMart, CircleKBatasKota, ]);
+const modern = L.layerGroup([SCBN1, AlfamidiTritunggal, IndomaretGiwangan, AlfamartGiwangan, IndomaretFreshPramuka, IndomaretGedongKuning112, IndomaretPurbayan, AlfamartNgeksigondo, SuperindoKotagede, IndomaretPerintisKemerdekaan, IndomaretMenteriSupeno, MirotaKampusMenteriSupeno, IndomaretBrigjenKatamso, LogMartMayjendSutoyo, IndomaretWahidHasyim, IndomaretAhmadDahlan, TokoProgo, IndomaretHayamWuruk, IndomaretTunjungBaru, AlfamartAMSangaji, CircleKAMSangaji, IndomaretAMSangaji68, MannaKampusSimanjuntak, Citrouli, IndomaretUripSumoharjo, SuperindoUripSumoharjo, AlfamidiGondokusuman, IndomaretWahidinNo60, CircleKDRWahidinKorner, AlfamartTimoho, IndomaretTimoho, CircleKTimoho, AlfamidiTimoho, IndomaretWirosaban, PamelaDelapan, IndomaretLowanu, AlfamartLowanu, PamellaEmpat, IndomaretCemara, AlfamartGambiran, IndomaretSorogenen, IndomaretGambiran, AlfamidiKiPenjawi, IndomaretRejowinangun, IndomaretVeteran23, IndomaretBabaran, PamellaDuaSwalayan, PeniSwalayan, AlfamartGlagahsari, AlfamartGedongkuning, PamellaSupermarket, SuperindoSultanAgung, AlfamartAhmadDahlan, IndomaretWirobrajan, SariJaya, AlfamidiREMartadinata, IndomaretPiereTendean, IndomaretKricak, IndomaretJambon, ProgoMartJambon, IndomaretFreshJetis, IndomaretSagan, IndomaretMangkubumi, AlfamartGowongan, AlfamartBumijo, AlfamartPembelaTanahAir, IndomaretHOSCokroaminoto, AlfaMidiSuper, IndomaretHosCokroaminoto91, IndomaretPakuncen, IndomaretSugengJeroni, IndomaretBantul , AlfamidiSupermarket, SuperindoBantul, MagaSupermarket, CircleKPrawirotaman, LawsonParangtritis, AlfamidiParangtritis , PurnamaSwalayanKarangkajen, AlfamartSisingamangaraja, IndomaretSisingamangaraja, KarumaMart, AlfamidiTamanSiswa2, IndomaretBatikan, IndomaretFreshYosSudarso, AlfamartDrSutomo, LawsonDRSoetomo, IndomaretDRSoetomo, IndomaretGondokusuman, AlfamartMojo, IndomaretMojo, IndomaretCendana , CircleKPasarKembang, AlfamartPasarKembang, AlfamidiPringgokusuman, IndomaretBhayangkara, IndomaretKHWahidHasyim, IndomaretLetjendSuprapto, IndomaretYudonegaran, IndomaretKatamso, AlfamartParangtritis, AlfamartMargoUtomoYogyakarta, AlfamartGajahMada, IndomaretPakualaman, AlfamartVeteran, CircleKDagen, AlfamartDagenYogyakarta, AlfamartKiAgengPemanahan, IndomaretSorosutan, SuperIndoParangtritis, AlfamartMenteriSupeno, AlfamartDIPanjaitan, IndomaretTamanSiswa, AlfaX, AlfamidiTamanSiswa, IndomaretMataramYK, IndomaretPointMalioboroII, AlfamartMalioboro, SuperIndoXTSquare, IndomaretJogokaryan, IndomaretDIPanjaitan, RenesSwalayan, AlfamartJlMagelang, IndomaretJlMagelang, IndomaretFreshDrSardjito, LawsonStoreAmSangaji, IndomaretIpdaTutHarsono, IntiSari, IndomaretKotagede, AlfamartPurbayan, IndomaretHybridKusumanegara, KusumaMart, IndomaretParangtritis, TokoMU, IndotokoMinimarket, WiwaraMinimarket, SASwalayan, AmaniMinimarket, BiasMart, AlfamidiVeteranJogja, DamaiIndah, AlfamartSorogenenJogja, USTMart, CircleKBatasKota, CircleKPrawirotaman2, CircleKGajahmada , IndomaretBausasran , AlfamartBrigjenKatamso ]);
 
 layerControl.addOverlay(modern, 'Super Market');
 
@@ -2100,6 +2111,11 @@ const TokoLukito = L.marker([-7.822045333349895, 110.37972974782276], {icon: War
 
 const MiniMallDelima = L.marker([-7.822100167945684, 110.38059514726493], {icon: WarungSembakoIcon})
 .bindPopup('<b>Mini Mall Delima</b><br/>JL. Sidokabul, RT / RW 25/7, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>085694367711<br><br> <img src="./pedagang/MiniMallDelima1.png" style="width:200px">');
+
+
+
+
+
 
 
 
