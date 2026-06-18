@@ -712,7 +712,36 @@ max-height: 100%;
 	const GGSPIcons = new GGSPIcon({iconUrl: 'logo-pedagang/logo-ggsp.png'});
 	
 
+<!-- ICON logo-aciq.png
+	const AciqIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'logo-pedagang/logo-aciq.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
 
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const AciqIcons = new AciqIcon({iconUrl: 'logo-pedagang/logo-aciq.png'});
+	
+
+<!-- ICON logo-hestimart.png
+	const HestimartIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'logo-pedagang/logo-hestimart.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
+
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const HestimartIcons = new HestimartIcon({iconUrl: 'logo-pedagang/logo-hestimart.png'});
+	
+	
 	
 <!-- KAMPUNG Sayur
 <!-- LORONG Sayur
@@ -1381,18 +1410,17 @@ const USTMart = L.marker([-7.808952280846809, 110.38187753011178], {icon: USTMar
 const TokoEVA = L.marker([-7.805128406979892, 110.36051644295931], {icon: TokoEVAIcons})
 .bindPopup('<b>Toko EVA</b><br/>Jl. Ngasem, Patehan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br>(0274)2872357<br><br> <img src="./supermarket/TokoEVA.png" style="width:200px">');
 
+const AciqMinimarket = L.marker([-7.77208672269742, 110.36558547042401], {icon: AciqIcons})
+.bindPopup('<b>Aciq Minimarket</b><br/>Jl. Gotong Royong No.1097, RT.12/RW.04, Karangwaru, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./supermarket/AciqMinimarket1.png" style="width:200px">');
+
+const HestiMart = L.marker([-7.785980424584604, 110.37631661789354], {icon: HestimartIcons})
+.bindPopup('<b>Hesti Mart</b><br/>Jl. Juadi No.19, Kotabaru, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55224<br><br> <img src="./supermarket/HestiMart.png" style="width:200px">');
 
 
 
 <!-- KURANG LOGO
-const AciqMinimarket = L.marker([-7.77208672269742, 110.36558547042401], {icon: TokoEVAIcons})
-.bindPopup('<b>Aciq Minimarket</b><br/>Jl. Gotong Royong No.1097, RT.12/RW.04, Karangwaru, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./supermarket/AciqMinimarket1.png" style="width:200px">');
-
 const TokoDinda = L.marker([-7.786842549416565, 110.35748624599724], {icon: TokoEVAIcons})
 .bindPopup('<b>Toko Dinda</b><br/>Jl. Tentara Rakyat Mataram No.33, Bumijo, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55231<br>0895411138044<br><br> <img src="./supermarket/TokoDinda1.png" style="width:200px"><img src="./supermarket/TokoDinda2.png" style="width:200px">');
-
-const HestiMart = L.marker([-7.785980424584604, 110.37631661789354], {icon: TokoEVAIcons})
-.bindPopup('<b>Hesti Mart</b><br/>Jl. Juadi No.19, Kotabaru, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55224<br><br> <img src="./supermarket/HestiMart.png" style="width:200px">');
 
 const KoperkasaMart = L.marker([-7.801117993013865, 110.39551851757554], {icon: TokoEVAIcons})
 .bindPopup('<b>Koperkasa Mart</b><br/>Jl. Kenari No.79, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55165<br>(0274)582144<br><br> <img src="./supermarket/KoperkasaMart.png" style="width:200px">');
