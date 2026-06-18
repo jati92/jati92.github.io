@@ -684,7 +684,26 @@ max-height: 100%;
 			});
 			
 	const HestimartIcons = new HestimartIcon({iconUrl: 'icon/logo-hestimart.png'});
+
 	
+<!-- ICON logo-koperkasa.png
+	const KoperkasaIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'icon/logo-koperkasa.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
+
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const KoperkasaIcons = new KoperkasaIcon({iconUrl: 'icon/logo-koperkasa.png'});
+
+
+
+
+
 
 <!-- ------------------------------------------------------------------------------------------------- LOGO PEDAGANG
 <!-- ICON warungmadura
@@ -1419,14 +1438,15 @@ const AciqMinimarket = L.marker([-7.77208672269742, 110.36558547042401], {icon: 
 const HestiMart = L.marker([-7.785980424584604, 110.37631661789354], {icon: HestimartIcons})
 .bindPopup('<b>Hesti Mart</b><br/>Jl. Juadi No.19, Kotabaru, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55224<br><br> <img src="./supermarket/HestiMart.png" style="width:200px">');
 
+const KoperkasaMart = L.marker([-7.801117993013865, 110.39551851757554], {icon: KoperkasaIcons})
+.bindPopup('<b>Koperkasa Mart</b><br/>Jl. Kenari No.79, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55165<br>(0274)582144<br><br> <img src="./supermarket/KoperkasaMart.png" style="width:200px">');
+
 
 
 <!-- KURANG LOGO
 const TokoDinda = L.marker([-7.786842549416565, 110.35748624599724], {icon: TokoEVAIcons})
 .bindPopup('<b>Toko Dinda</b><br/>Jl. Tentara Rakyat Mataram No.33, Bumijo, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55231<br>0895411138044<br><br> <img src="./supermarket/TokoDinda1.png" style="width:200px"><img src="./supermarket/TokoDinda2.png" style="width:200px">');
 
-const KoperkasaMart = L.marker([-7.801117993013865, 110.39551851757554], {icon: TokoEVAIcons})
-.bindPopup('<b>Koperkasa Mart</b><br/>Jl. Kenari No.79, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55165<br>(0274)582144<br><br> <img src="./supermarket/KoperkasaMart.png" style="width:200px">');
 
 const MamaMartTimoho = L.marker([-7.7990463432655925, 110.39413816917028], {icon: TokoEVAIcons})
 .bindPopup('<b>Mama Mart Timoho</b><br/>Perum Timoho Asri 5 Jl. Balirejo No.5B, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55165<br>08112632755<br><br> <img src="./supermarket/MamaMartTimoho.png" style="width:200px">');
