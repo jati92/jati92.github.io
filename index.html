@@ -745,7 +745,34 @@ max-height: 100%;
 	
 
 
+<!-- ICON TokoDindaIcon
+	const TokoDindaIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'icon/logo-tokodinda.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
 
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const TokoDindaIcons = new TokoDindaIcon({iconUrl: 'icon/logo-tokodinda.png'});
+	
+	
+<!-- ICON logo-tokopaspojok.png
+	const TokoPasPojokIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'icon/logo-tokopaspojok.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
+
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const TokoPasPojokIcons = new TokoPasPojokIcon({iconUrl: 'icon/logo-tokopaspojok.png'});
 
 <!-- ------------------------------------------------------------------------------------------------- LOGO PEDAGANG
 <!-- ICON warungmadura
@@ -1493,17 +1520,11 @@ const MiniMarketSarasa = L.marker([-7.790064382287047, 110.37876110175019], {ico
 .bindPopup('<b>Mini Market Sarasa</b><br/>Jl. Argolubang No.22, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br>081804036168<br><br> <img src="./supermarket/SarasaMart.png" style="width:200px">');
 
 
-
-
-
-<!-- KURANG LOGO
-const TokoDinda = L.marker([-7.786842549416565, 110.35748624599724], {icon: TokoEVAIcons})
+const TokoDinda = L.marker([-7.786842549416565, 110.35748624599724], {icon: TokoDindaIcons})
 .bindPopup('<b>Toko Dinda</b><br/>Jl. Tentara Rakyat Mataram No.33, Bumijo, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55231<br>0895411138044<br><br> <img src="./supermarket/TokoDinda1.png" style="width:200px"><img src="./supermarket/TokoDinda2.png" style="width:200px">');
 
 
-
-
-const TokoPasPojokBalirejo = L.marker([-7.796977542495614, 110.39438600231877], {icon: TokoEVAIcons})
+const TokoPasPojokBalirejo = L.marker([-7.796977542495614, 110.39438600231877], {icon: TokoPasPojokIcons})
 .bindPopup('<b>Toko Pas Pojok Balirejo</b><br/>Jl. Balirejo No.1, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 92985<br>089687484210<br><br> <img src="./supermarket/TokoPasPojokBalirejo.png" style="width:200px">');
 
 
