@@ -832,7 +832,19 @@ max-height: 100%;
 	const GGSPIcons = new GGSPIcon({iconUrl: 'logo-pedagang/logo-ggsp.png'});
 	
 
-	
+<!-- ICON SPPG
+	const SPPGIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'icon/LOGO-SPPG.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
+
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const SPPGIcons = new SPPGIcon({iconUrl: 'icon/LOGO-SPPG.png'});
 	
 <!-- KAMPUNG Sayur
 <!-- LORONG Sayur
@@ -2472,15 +2484,21 @@ layerControl.addOverlay(mall, 'Mall');
 
 <!-------------------------------------------------SPPG
 
-const SPPG1 = L.marker([-7.783164671002617, 110.38118690482466], {icon: GardenaIcons})
-.bindPopup('<b>Gardena Department Store & Supermarket</b><br />Jl. Urip Sumoharjo No.40, Klitren, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55222<br><br> <img src="./mall/gardena1.png" style="width:200px">');
+const SPPGWirobrajan1 = L.marker([-7.804112047828746, 110.34815595441871], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Wirobrajan Wirobrajan</b><br />Jl. Arjuna No.30, Wirobrajan, Wirobrajan, Yogyakarta<br>ID SPPG : BPZPLTNB<br>Yayasan : Jariyah Soetopo Sumihati<br>No Kontak : 085876076926<br> <img src="./sppg/SPPG Kota Yogyakarta Wirobrajan Wirobrajan arjuna.png" style="width:200px"> <img src="./sppg/SPPG Kota Yogyakarta Wirobrajan Wirobrajan arjuna2.png" style="width:200px">');
+
+const SPPGPatangpuluhanWirobrajan1 = L.marker([-7.810641688002565, 110.34963841633078], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Wirobrajan Patangpuluhan</b><br />Jl Bugisan No 38, Patangpuluhan, Wirobrajan, Yogyakarta<br>ID SPPG : KT0LS59E<br>Yayasan : Insan Saguh Jaya<br>No Kontak : 089623548090<br> <img src="./sppg/SPPG Kota Yogyakarta Wirobrajan Patangpuluhan bugisan.png" style="width:200px"> ');
+
+const SPPGKratonKadipaten1 = L.marker([-7.807532534927781, 110.3568390133195], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Kraton Kadipaten</b><br />Jl . Basahan Kadipaten Kulon KP. I / 311, RT. 12, RW.04 Kelurahan Kadipaten, Kecamatan Kraton, Kota Yogyakarta 55132<br>ID SPPG : MUC4MYOI<br>Yayasan : Serikat Putra Kertanegara<br>No Kontak : 085198553639<br> <img src="./sppg/SPPG Kota Yogyakarta Kraton Kadipaten.png" style="width:200px"> ');
 
 
 
 
 
 
-const sppg = L.layerGroup([SPPG1, ]);
+const sppg = L.layerGroup([SPPGWirobrajan1, SPPGPatangpuluhanWirobrajan1, SPPGKratonKadipaten1, ]);
 
 layerControl.addOverlay(sppg, 'SPPG');
 
