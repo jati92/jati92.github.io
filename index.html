@@ -2496,11 +2496,17 @@ const SPPGKratonKadipaten1 = L.marker([-7.807532534927781, 110.3568390133195], {
 const SPPGKratonPanembahan1 = L.marker([-7.8061855192370535, 110.3679728722302], {icon: SPPGIcons})
 .bindPopup('<b>SPPG Kota Yogyakarta Kraton Panembahan</b><br />Jl. Mangunnegaran Kidul no.17, Panembahan, Kraton, Kota Yogyakarta<br>ID SPPG : WZ42SPFW<br>Yayasan : Kemala Bhayangkari<br>No Kontak : 082220712656<br> <img src="./sppg/SPPG Kota Yogyakarta Kraton Panembahan.png" style="width:200px"> ');
 
+const SPPGNgampilanNgampilan1 = L.marker([-7.8002329643573844, 110.36006495402081], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Ngampilan Ngampilan</b><br />Jl. Ngadiwinatan Ng 1/1298 Rt 63 Rw 12, Ngampilan, Kec. Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br>ID SPPG : WN6F3OGY<br>Yayasan : Tirta Gizi Perkasa<br>No Kontak : 082325600540<br> <img src="./sppg/SPPG Kota Yogyakarta Ngampilan Ngampilan.png" style="width:200px"> ');
+
+const SPPGMergangsanKeparakan1 = L.marker([-7.811038400128847, 110.37419751503795], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Mergangsan Keparakan</b><br />Keparakan Lor RW 10, Mergangsan, Kota Yogyakarta<br>ID SPPG : NPFKWNO2<br>Yayasan : Makmur Pangan Sehat<br>No Kontak : 089674627205<br> <img src="./sppg/SPPG Kota Yogyakarta Mergangsan Keparakan.png" style="width:200px"> ');
 
 
 
 
-const sppg = L.layerGroup([SPPGWirobrajan1, SPPGPatangpuluhanWirobrajan1, SPPGKratonKadipaten1, ]);
+
+const sppg = L.layerGroup([SPPGWirobrajan1, SPPGPatangpuluhanWirobrajan1, SPPGKratonKadipaten1, SPPGKratonPanembahan1, SPPGNgampilanNgampilan1, SPPGMergangsanKeparakan1,  ]);
 
 layerControl.addOverlay(sppg, 'SPPG');
 
