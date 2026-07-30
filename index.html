@@ -944,20 +944,30 @@ const Kluwih = L.marker([-7.809549188172513, 110.3658417760863], {icon: PasarIco
 .bindPopup('<b>Pasar Kluwih</b><br />Jl. Suryoputran, Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55131<br> <img src="./pasar/PasarKluwih1.png" style="width:200px"><br> <img src="./pasar/PasarKluwih2.png" style="width:200px">');
 
 
+
+
+
+
 const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> - Taufik Jati Saputra (Dinas Pertanian dan Pangan Kota Yogyakarta)'
+});
+
+ // Esri World Imagery (Satellite view - No API key required for basic web use)
+const Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
 
 
 const map = L.map('map', {
 	center: [-7.8012707138265, 110.37111085791202],
 	zoom: 13,
-	layers: [osm, gruppasar]
+	layers: [Esri_WorldImagery, gruppasar]
 });
 
 const baseLayers = {
 	'OpenStreetMap': osm,
+		'Satellite': Esri_WorldImagery,
 	};
 
 const overlays = {
