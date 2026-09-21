@@ -2488,17 +2488,26 @@ layerControl.addOverlay(mall, 'Mall');
 
 <!-- SPPGIcons
 
-const SPPGTegalrejoKricak = L.marker([-7.773155024021362, 110.3609600951737], {icon: SPPGIcons})
-.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Kricak</b><br/>Yayasan : Arus Bawah Persada<br>Jalan Magelang 113-117, Kricak, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKricak.png" style="width:200px">');
-
 const SPPGTegalrejoKarangwaru = L.marker([-7.778634569887022, 110.3637173889591], {icon: SPPGIcons})
-.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Karangwaru </b><br/>Yayasan : Nurul Ihsan<br>Jalan Robert Wolter Monginsidi 31, Karangwaru, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKarangwaru1.png" style="width:200px"> <img src="./sppg/SPPGTegalrejoKarangwaru2.png" style="width:200px"> ');
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Karangwaru</b><br/>Yayasan : Nurul Ihsan<br>ID SPPG : XW1UKW2D<br>Jalan Robert Wolter Monginsidi 31, Karangwaru, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKarangwaru1.png" style="width:200px"> <img src="./sppg/SPPGTegalrejoKarangwaru2.png" style="width:200px"> ');
+
+const SPPGTegalrejoKricak = L.marker([-7.773155024021362, 110.3609600951737], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Kricak</b><br/>Yayasan : Arus Bawah Persada<br>ID SPPG : P3GDMSOG<br>Jalan Magelang 113-117, Kricak, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKricak.png" style="width:200px">');
+
+const SPPGTegalrejoTegalrejo = L.marker([-7.792061927626844, 110.35221735750939], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Tegalrejo</b><br/>Yayasan : Mugi Berkah Lestari<br>ID SPPG : 1ZYRT6QI<br>Jl. Demakan Baru Gang Buntu Tr III No.802, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGTegalrejoTegalrejo.png" style="width:200px"> ');
+
+const SPPGJetisCokrodiningratan = L.marker([-7.776152513878174, 110.36852089006483], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Jetis Cokrodiningratan</b><br/>Yayasan : Serikat Putra Kertanegara<br>ID SPPG : QQDDRHVV<br>Gg. Jetisharjo No.267, Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br><br> <img src="./sppg/SPPGJetisCokrodiningratan.png" style="width:200px"> ');
 
 
 
 
 
-const sppg = L.layerGroup([SPPGTegalrejoKricak, SPPGTegalrejoKarangwaru,  ]);
+
+
+
+const sppg = L.layerGroup([SPPGTegalrejoKricak, SPPGTegalrejoKarangwaru, SPPGTegalrejoTegalrejo, SPPGJetisCokrodiningratan, ]);
 
 layerControl.addOverlay(sppg, 'SPPG');
 
