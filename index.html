@@ -2488,6 +2488,19 @@ layerControl.addOverlay(mall, 'Mall');
 
 <!-- SPPGIcons
 
+const SPPGTegalrejoKricak = L.marker([-7.773155024021362, 110.3609600951737], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Kricak</b><br/>Yayasan : Arus Bawah Persada<br>Jalan Magelang 113-117, Kricak, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKricak.png" style="width:200px">');
+
+const SPPGTegalrejoKarangwaru = L.marker([-7.778634569887022, 110.3637173889591], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Karangwaru </b><br/>Yayasan : Nurul Ihsan<br>Jalan Robert Wolter Monginsidi 31, Karangwaru, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKarangwaru1.png" style="width:200px"> <img src="./sppg/SPPGTegalrejoKarangwaru2.png" style="width:200px"> ');
+
+
+
+
+
+const sppg = L.layerGroup([SPPGTegalrejoKricak, SPPGTegalrejoKarangwaru,  ]);
+
+layerControl.addOverlay(sppg, 'SPPG');
 
 
 
