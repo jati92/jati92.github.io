@@ -1721,7 +1721,7 @@ const TokoRezaMadura = L.marker([-7.827712335612328, 110.39007331695082], {icon:
 .bindPopup('<b>Toko Reza Madura</b><br/>Jl. Imogiri Tim., Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./pedagang/TokoRezaMadura1.png" style="width:200px">');
 
 const BarrenJaya = L.marker([-7.81954704008621, 110.36797240305805], {icon: WarungMaduraIcons})
-.bindPopup('<b>Barren Jaya</b><br/>Jl. Parangtritis No.70, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br><br> <img src="./pedagang/BarrenJaya1.png" style="width:200px">');
+.bindPopup('<b>Garren Jaya</b><br/>Jl. Parangtritis No.70, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br><br> <img src="./pedagang/BarrenJaya1.png" style="width:200px">');
 
 const WarungMadura24Jam = L.marker([-7.82519399285734, 110.38420566309043], {icon: WarungMaduraIcons})
 .bindPopup('<b>Warung Madura 24 Jam</b><br/>Jl. Sorogenen No.27a, RT.037/RW.015, Kel. Sorotan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/WarungMadura24Jam1.png" style="width:200px">');
@@ -2536,6 +2536,11 @@ const SPPGWirobrajanWirobrajan = L.marker([-7.804105720346142, 110.3481515644161
 const SPPGWirobrajanPatangpuluhan = L.marker([-7.8106383192828845, 110.34962911001223], {icon: SPPGIcons})
 .bindPopup('<b>SPPG Kota Yogyakarta Wirobrajan Patangpuluhan</b><br/>Yayasan : Insan Saguh Jaya<br>ID SPPG : KT0LS59E<br>Jl Bugisan No 38, Patangpuluhan, Wirobrajan, Kota Yogyakarta<br><br> <img src="./sppg/SPPGWirobrajanPatangpuluhan.png" style="width:200px"> ');
 
+const SPPGMantrijeronMantrijeron = L.marker([-7.820437250038042, 110.36519128112728], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Mantrijeron Mantrijeron</b><br/>Yayasan : Indonesia Food Security Review<br>ID SPPG : DM7ULJRY<br>Jl. Surami No. 845, Mantrijeron, Mantrijeron, Kota Yogyakarta, DIY<br><br> <img src="./sppg/SPPGMantrijeronMantrijeron.png" style="width:200px"> ');
+
+const SPPGMantrijeronSuryodiningratan = L.marker([-7.814030248893865, 110.36200169759371], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Mantrijeron Suryodiningratan</b><br/>Yayasan : -<br>ID SPPG : CS5VAVOR<br>Jl. MT. Haryono, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55143<br><br> <img src="./sppg/SPPGMantrijeronSuryodiningratan.png" style="width:200px"> ');
 
 
 
@@ -2544,7 +2549,10 @@ const SPPGWirobrajanPatangpuluhan = L.marker([-7.8106383192828845, 110.349629110
 
 
 
-const sppg = L.layerGroup([SPPGTegalrejoKricak, SPPGTegalrejoKarangwaru, SPPGTegalrejoTegalrejo, SPPGJetisCokrodiningratan, SPPGJetisGowongan, SPPGGondokusumanKlitren, SPPGGondokusumanBaciro, SPPGGondokusumanBaciro2, SPPGDanurejanBausasran, SPPGGedongtengenSosromenduran, SPPGGedongtengenPringgokusuman, SPPGNgampilanNotoprajan2, SPPGNgampilanNgampilan, SPPGNgampilanNgampilan3, SPPGWirobrajanWirobrajan, SPPGWirobrajanPatangpuluhan, ]);
+
+
+
+const sppg = L.layerGroup([SPPGTegalrejoKricak, SPPGTegalrejoKarangwaru, SPPGTegalrejoTegalrejo, SPPGJetisCokrodiningratan, SPPGJetisGowongan, SPPGGondokusumanKlitren, SPPGGondokusumanBaciro, SPPGGondokusumanBaciro2, SPPGDanurejanBausasran, SPPGGedongtengenSosromenduran, SPPGGedongtengenPringgokusuman, SPPGNgampilanNotoprajan2, SPPGNgampilanNgampilan, SPPGNgampilanNgampilan3, SPPGWirobrajanWirobrajan, SPPGWirobrajanPatangpuluhan, SPPGMantrijeronMantrijeron, SPPGMantrijeronSuryodiningratan, ]);
 
 layerControl.addOverlay(sppg, 'SPPG');
 
