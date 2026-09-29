@@ -841,7 +841,7 @@ max-height: 100%;
 <!-- ICON SPPG
 	const SPPGIcon = L.Icon.extend({
 		options: {
-			shadowUrl: 'icon/LOGO-SPPG.png.png',
+			shadowUrl: 'icon/LOGO-SPPG.png',
 			iconSize:     [35, 35],
 			shadowSize:   [0, 0],
 
@@ -852,6 +852,40 @@ max-height: 100%;
 			
 	const SPPGIcons = new SPPGIcon({iconUrl: 'icon/LOGO-SPPG.png'});
 	
+
+<!-- ICON Prima
+	const PrimaIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'logo-pedagang/prima.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
+
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const PrimaIcons = new PrimaIcon({iconUrl: 'logo-pedagang/prima.png'});
+
+
+<!-- ICON DRP-logo.png
+	const DRPIcon = L.Icon.extend({
+		options: {
+			shadowUrl: 'logo-pedagang/DRP-logo.png',
+			iconSize:     [35, 35],
+			shadowSize:   [0, 0],
+
+			shadowAnchor: [4, 62],
+			popupAnchor:  [-1, -1]
+		}
+			});
+			
+	const DRPIcons = new DRPIcon({iconUrl: 'logo-pedagang/DRP-logo.png'});
+
+
+
+
+
 
 
 
@@ -944,34 +978,24 @@ const Kluwih = L.marker([-7.809549188172513, 110.3658417760863], {icon: PasarIco
 .bindPopup('<b>Pasar Kluwih</b><br />Jl. Suryoputran, Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55131<br> <img src="./pasar/PasarKluwih1.png" style="width:200px"><br> <img src="./pasar/PasarKluwih2.png" style="width:200px">');
 
 
-
-
-
-
 const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	maxZoom: 19,
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> - Taufik Jati Saputra (Dinas Pertanian dan Pangan Kota Yogyakarta)'
-});
-
- // Esri World Imagery (Satellite view - No API key required for basic web use)
-const Esri_WorldImagery = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 });
 
 
 const map = L.map('map', {
 	center: [-7.8012707138265, 110.37111085791202],
 	zoom: 13,
-	layers: [Esri_WorldImagery, gruppasar]
+	layers: [osm, gruppasar]
 });
 
 const baseLayers = {
 	'OpenStreetMap': osm,
-		'Satellite': Esri_WorldImagery,
 	};
 
 const overlays = {
-	'Pasar': gruppasar
+	'Pasar (25 Titik)': gruppasar
 };
 
 
@@ -1087,6 +1111,16 @@ const AlfamidiVeteranJogja = L.marker([-7.816509995243354, 110.38533489451021], 
 const AlfamidiMelatiWetan = L.marker([-7.791561066856151, 110.38744172327648], {icon: AlfaMidiIcons})
 .bindPopup('<b>Alfamidi Melati Wetan</b><br/>Jl. Melati Wetan No.19, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./supermarket/AlfamidiMelatiWetan.png" style="width:200px">');
 
+const AlfamidiSParmanJogja = L.marker([-7.808575569811587, 110.35498744475345], {icon: AlfaMidiIcons})
+.bindPopup('<b>Alfamidi S.Parman Jogja</b><br/>Jl. Letjen S.Parman No.9, Gedongkiwo, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55142<br>0211500959<br><br> <img src="./supermarket/AlfamidiSParmanJogja.png" style="width:200px">');
+
+
+
+
+
+
+
+
 
 
 
@@ -1183,6 +1217,14 @@ const AlfamartWahidHasyim = L.marker([-7.803423471833095, 110.35649542241724], {
 
 const AlfamartMangkubumiJogja = L.marker([-7.787932893270438, 110.36628803428277], {icon: AlfaMartIcons})
 .bindPopup('<b>Alfamart Mangkubumi Jogja</b><br/>Jalan P Jl. Margo Utomo No.11, Sosromenduran, Gedong Tengen, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55271<br><br> <img src="./supermarket/AlfamartMangkubumiJogja1.png" style="width:200px">');
+
+const AlfamartPatangpuluhan = L.marker([-7.8074772614960155, 110.34683290277505], {icon: AlfaMartIcons})
+.bindPopup('<b>Alfamart Patangpuluhan</b><br/>Jl. Patangpuluhan No.RT.03, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251<br>0272555234<br><br> <img src="./supermarket/AlfamartPatangpuluhan.png" style="width:200px">');
+
+
+
+
+
 
 
 
@@ -1389,6 +1431,22 @@ const IndomaretBhayangkara41  = L.marker([-7.797962909498916, 110.36201742391364
 const IndomaretCikDitiro  = L.marker([-7.780454595859288, 110.37554188452742], {icon: IndomaretIcons})
 .bindPopup('<b>Indomaret Cik Ditiro</b><br/>Jl. Cik Di Tiro, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223<br><br> <img src="./supermarket/IndomaretCikDitiro.png" style="width:200px">');
 
+const IndomaretGlagahsari  = L.marker([-7.808168296280353, 110.38765361714637], {icon: IndomaretIcons})
+.bindPopup('<b>Indomaret Glagahsari</b><br/>Glagahsari, Warungboto, Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55164<br><br> <img src="./supermarket/IndomaretGlagahsari.png" style="width:200px">');
+
+const IndomaretGlagahsari15  = L.marker([-7.803127181608944, 110.38901893424351], {icon: IndomaretIcons})
+.bindPopup('<b>Indomaret Glagahsari 15</b><br/>Jl. Glagahsari No.15, Warungboto, Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55164<br>081391423336<br><br> <img src="./supermarket/IndomaretGlagahsari15.png" style="width:200px">');
+
+const IndomaretNyiPembayunKotagede  = L.marker([-7.822357446454949, 110.39802383934818], {icon: IndomaretIcons})
+.bindPopup('<b>Indomaret Nyi Pembayun Kotagede</b><br/>Jl. Nyi Pembayun No.20 B, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br><br> <img src="./supermarket/IndomaretNyiPembayunKotagede.png" style="width:200px">');
+
+
+
+
+
+
+
+
 
 
 <!-- LOKASI CK
@@ -1441,6 +1499,8 @@ const PamellaDuaSwalayan = L.marker([-7.813279234907167, 110.38641774145462], {i
 .bindPopup('<b>Pamella Dua Swalayan</b><br />Jl. Pandeyan No.16, Pandeyan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55161<br>(0274)388277<br><br> <img src="./supermarket/PamellaDuaSwalayan1.png" style="width:200px">');
 
 
+
+
 <!-- LOKASI LAWSON
 const LawsonDRSoetomo = L.marker([-7.794002449556706, 110.37801511123558], {icon: LawsonIcons})
 .bindPopup('<b>Lawson DR Soetomo</b><br/>Jl. Tunjung Baru No.2, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./supermarket/LawsonDRSoetomo1.png" style="width:200px">');
@@ -1459,12 +1519,15 @@ const LawsonDrWahidin = L.marker([-7.786024477088663, 110.37888170065673], {icon
 
 
 
+
 <!-- LOKASI MANNA KAMPUS
 const MirotaKampusMenteriSupeno = L.marker([-7.816424731134159, 110.37945849160933], {icon: MannaKampusIcons})
 .bindPopup('<b>Mirota Kampus Menteri Supeno</b><br />Jl. Menteri Supeno No.38, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./supermarket/mirotakampusmenterisupeno2.png" style="width:200px"><br> <img src="./supermarket/mirotakampusmenterisupeno1.png" style="width:200px">');
 
 const MannaKampusSimanjuntak = L.marker([-7.7763198513095935, 110.37443055394671], {icon: MannaKampusIcons})
 .bindPopup('<b>Manna Kampus (Mirota Kampus) Simanjuntak</b><br />Jl. C. Simanjuntak No.70, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223<br><br> <img src="./supermarket/mannakampussimanjuntak1.png" style="width:200px"><br> <img src="./supermarket/mannakampussimanjuntak2.png" style="width:200px">');
+
+
 
 
 <!-- LOKASI LAIN2
@@ -1494,6 +1557,9 @@ const ProgoMartJambon = L.marker([-7.768219271213575, 110.35484997046738], {icon
 
 const MagaSupermarket = L.marker([-7.817921909600314, 110.36202132435702], {icon: MAGASWALAYANIcons})
 .bindPopup('<b>Maga Supermarket</b><br/>Jl. DI Panjaitan No.54, Suryodiningratan, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55141<br>08170253531<br><br> <img src="./supermarket/MagaSupermarket1.png" style="width:200px">');
+
+const SupermarketMaga3 = L.marker([-7.808272148721804, 110.3666504031528], {icon: MAGASWALAYANIcons})
+.bindPopup('<b>Supermarket Maga 3</b><br/>Jl. Panembahan Mangkurat No.26, Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55131<br>0274449289<br><br> <img src="./supermarket/SupermarketMaga3.png" style="width:200px">');
 
 const KarumaMart = L.marker([-7.813872721059891, 110.37628169286943], {icon: KarumaSwalayanIcons})
 .bindPopup('<b>Karuma Mart</b><br/>Jl. Taman Siswa No.154, Wirogunan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55151<br>(0274)371044<br><br> <img src="./supermarket/KarumaMart1.png" style="width:200px">');
@@ -1565,7 +1631,7 @@ const TokoPasPojokBalirejo = L.marker([-7.796977542495614, 110.39438600231877], 
 
 
 
-const modern = L.layerGroup([SCBN1, AlfamidiTritunggal, IndomaretGiwangan, AlfamartGiwangan, IndomaretFreshPramuka, IndomaretGedongKuning112, IndomaretPurbayan, AlfamartNgeksigondo, SuperindoKotagede, IndomaretPerintisKemerdekaan, IndomaretMenteriSupeno, MirotaKampusMenteriSupeno, IndomaretBrigjenKatamso, LogMartMayjendSutoyo, IndomaretWahidHasyim, IndomaretAhmadDahlan, TokoProgo, IndomaretHayamWuruk, IndomaretTunjungBaru, AlfamartAMSangaji, CircleKAMSangaji, IndomaretAMSangaji68, MannaKampusSimanjuntak, Citrouli, IndomaretUripSumoharjo, SuperindoUripSumoharjo, AlfamidiGondokusuman, IndomaretWahidinNo60, CircleKDRWahidinKorner, AlfamartTimoho, IndomaretTimoho, CircleKTimoho, AlfamidiTimoho, IndomaretWirosaban, PamelaDelapan, IndomaretLowanu, AlfamartLowanu, PamellaEmpat, IndomaretCemara, AlfamartGambiran, IndomaretSorogenen, IndomaretGambiran, AlfamidiKiPenjawi, IndomaretRejowinangun, IndomaretVeteran23, IndomaretBabaran, PamellaDuaSwalayan, PeniSwalayan, AlfamartGlagahsari, AlfamartGedongkuning, PamellaSupermarket, SuperindoSultanAgung, AlfamartAhmadDahlan, IndomaretWirobrajan, SariJaya, AlfamidiREMartadinata, IndomaretPiereTendean, IndomaretKricak, IndomaretJambon, ProgoMartJambon, IndomaretFreshJetis, IndomaretSagan, IndomaretMangkubumi, AlfamartGowongan, AlfamartBumijo, AlfamartPembelaTanahAir, IndomaretHOSCokroaminoto, AlfaMidiSuper, IndomaretHosCokroaminoto91, IndomaretPakuncen, IndomaretSugengJeroni, IndomaretBantul , AlfamidiSupermarket, SuperindoBantul, MagaSupermarket, CircleKPrawirotaman, LawsonParangtritis, AlfamidiParangtritis , PurnamaSwalayanKarangkajen, AlfamartSisingamangaraja, IndomaretSisingamangaraja, KarumaMart, AlfamidiTamanSiswa2, IndomaretBatikan, IndomaretFreshYosSudarso, AlfamartDrSutomo, LawsonDRSoetomo, IndomaretDRSoetomo, IndomaretGondokusuman, AlfamartMojo, IndomaretMojo, IndomaretCendana , CircleKPasarKembang, AlfamartPasarKembang, AlfamidiPringgokusuman, IndomaretBhayangkara, IndomaretKHWahidHasyim, IndomaretLetjendSuprapto, IndomaretYudonegaran, IndomaretKatamso, AlfamartParangtritis, AlfamartMargoUtomoYogyakarta, AlfamartGajahMada, IndomaretPakualaman, AlfamartVeteran, CircleKDagen, AlfamartDagenYogyakarta, AlfamartKiAgengPemanahan, IndomaretSorosutan, SuperIndoParangtritis, AlfamartMenteriSupeno, AlfamartDIPanjaitan, IndomaretTamanSiswa, AlfaX, AlfamidiTamanSiswa, IndomaretMataramYK, IndomaretPointMalioboroII, AlfamartMalioboro, SuperIndoXTSquare, IndomaretJogokaryan, IndomaretDIPanjaitan, RenesSwalayan, AlfamartJlMagelang, IndomaretJlMagelang, IndomaretFreshDrSardjito, LawsonStoreAmSangaji, IndomaretIpdaTutHarsono, IntiSari, IndomaretKotagede, AlfamartPurbayan, IndomaretHybridKusumanegara, KusumaMart, IndomaretParangtritis, TokoMU, IndotokoMinimarket, WiwaraMinimarket, SASwalayan, AmaniMinimarket, BiasMart, AlfamidiVeteranJogja, DamaiIndah, AlfamartSorogenenJogja, USTMart, CircleKBatasKota, CircleKPrawirotaman2, CircleKGajahmada , IndomaretBausasran , AlfamartBrigjenKatamso, IndomaretVeteran183 , AlfamartWahidHasyim, TokoEVA, AciqMinimarket, LawsonMangkubumi, AlfamartMangkubumiJogja, TokoDinda, IndomaretBhayangkara41, AlfamidiMelatiWetan, HestiMart, IndomaretCikDitiro, KoperkasaMart, LawsonDrWahidin, MamaMartTimoho, MinimarketAsli, TokoPasPojokBalirejo, MiniMarketSarasa , CircleKDrSutomoLempuyangan, ]);
+const modern = L.layerGroup([SCBN1, AlfamidiTritunggal, IndomaretGiwangan, AlfamartGiwangan, IndomaretFreshPramuka, IndomaretGedongKuning112, IndomaretPurbayan, AlfamartNgeksigondo, SuperindoKotagede, IndomaretPerintisKemerdekaan, IndomaretMenteriSupeno, MirotaKampusMenteriSupeno, IndomaretBrigjenKatamso, LogMartMayjendSutoyo, IndomaretWahidHasyim, IndomaretAhmadDahlan, TokoProgo, IndomaretHayamWuruk, IndomaretTunjungBaru, AlfamartAMSangaji, CircleKAMSangaji, IndomaretAMSangaji68, MannaKampusSimanjuntak, Citrouli, IndomaretUripSumoharjo, SuperindoUripSumoharjo, AlfamidiGondokusuman, IndomaretWahidinNo60, CircleKDRWahidinKorner, AlfamartTimoho, IndomaretTimoho, CircleKTimoho, AlfamidiTimoho, IndomaretWirosaban, PamelaDelapan, IndomaretLowanu, AlfamartLowanu, PamellaEmpat, IndomaretCemara, AlfamartGambiran, IndomaretSorogenen, IndomaretGambiran, AlfamidiKiPenjawi, IndomaretRejowinangun, IndomaretVeteran23, IndomaretBabaran, PamellaDuaSwalayan, PeniSwalayan, AlfamartGlagahsari, AlfamartGedongkuning, PamellaSupermarket, SuperindoSultanAgung, AlfamartAhmadDahlan, IndomaretWirobrajan, SariJaya, AlfamidiREMartadinata, IndomaretPiereTendean, IndomaretKricak, IndomaretJambon, ProgoMartJambon, IndomaretFreshJetis, IndomaretSagan, IndomaretMangkubumi, AlfamartGowongan, AlfamartBumijo, AlfamartPembelaTanahAir, IndomaretHOSCokroaminoto, AlfaMidiSuper, IndomaretHosCokroaminoto91, IndomaretPakuncen, IndomaretSugengJeroni, IndomaretBantul , AlfamidiSupermarket, SuperindoBantul, MagaSupermarket, CircleKPrawirotaman, LawsonParangtritis, AlfamidiParangtritis , PurnamaSwalayanKarangkajen, AlfamartSisingamangaraja, IndomaretSisingamangaraja, KarumaMart, AlfamidiTamanSiswa2, IndomaretBatikan, IndomaretFreshYosSudarso, AlfamartDrSutomo, LawsonDRSoetomo, IndomaretDRSoetomo, IndomaretGondokusuman, AlfamartMojo, IndomaretMojo, IndomaretCendana , CircleKPasarKembang, AlfamartPasarKembang, AlfamidiPringgokusuman, IndomaretBhayangkara, IndomaretKHWahidHasyim, IndomaretLetjendSuprapto, IndomaretYudonegaran, IndomaretKatamso, AlfamartParangtritis, AlfamartMargoUtomoYogyakarta, AlfamartGajahMada, IndomaretPakualaman, AlfamartVeteran, CircleKDagen, AlfamartDagenYogyakarta, AlfamartKiAgengPemanahan, IndomaretSorosutan, SuperIndoParangtritis, AlfamartMenteriSupeno, AlfamartDIPanjaitan, IndomaretTamanSiswa, AlfaX, AlfamidiTamanSiswa, IndomaretMataramYK, IndomaretPointMalioboroII, AlfamartMalioboro, SuperIndoXTSquare, IndomaretJogokaryan, IndomaretDIPanjaitan, RenesSwalayan, AlfamartJlMagelang, IndomaretJlMagelang, IndomaretFreshDrSardjito, LawsonStoreAmSangaji, IndomaretIpdaTutHarsono, IntiSari, IndomaretKotagede, AlfamartPurbayan, IndomaretHybridKusumanegara, KusumaMart, IndomaretParangtritis, TokoMU, IndotokoMinimarket, WiwaraMinimarket, SASwalayan, AmaniMinimarket, BiasMart, AlfamidiVeteranJogja, DamaiIndah, AlfamartSorogenenJogja, USTMart, CircleKBatasKota, CircleKPrawirotaman2, CircleKGajahmada , IndomaretBausasran , AlfamartBrigjenKatamso, IndomaretVeteran183 , AlfamartWahidHasyim, TokoEVA, AciqMinimarket, LawsonMangkubumi, AlfamartMangkubumiJogja, TokoDinda, IndomaretBhayangkara41, AlfamidiMelatiWetan, HestiMart, IndomaretCikDitiro, KoperkasaMart, LawsonDrWahidin, MamaMartTimoho, MinimarketAsli, TokoPasPojokBalirejo, MiniMarketSarasa , CircleKDrSutomoLempuyangan, AlfamartPatangpuluhan, IndomaretGlagahsari, IndomaretGlagahsari15, IndomaretNyiPembayunKotagede, AlfamidiSParmanJogja, SupermarketMaga3,  ]);
 
 layerControl.addOverlay(modern, 'Super Market');
 
@@ -1597,7 +1663,7 @@ const SRCGajahPutihMalioboro = L.marker([-7.789041221754326, 110.38187656214703]
 .bindPopup('<b>Toko SRC Gajah Putih Malioboro</b><br/>Jl. Mutiara No.18, Demangan, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br>085801289929<br><br> <img src="./pedagang/SRCGajahPutihMalioboro1.png" style="width:200px">');
 
 const TokoArdanSRC = L.marker([-7.820657500635375, 110.39863287836688], {icon: SRCIcons})
-.bindPopup('<b>Toko Ardan SRC</b><br/>Jl. Ringin Putih, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br><br> <img src="./pedagang/TokoArdanSRC1.png" style="width:200px">');
+.bindPopup('<b>Toko Ardan SRC</b><br/>Jl. Ringin Putih, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br><br> <img src="./pedagang/TokoArdanSRC1.png" style="width:200px"> <img src="./pedagang/TokoArdanSRC2.png" style="width:200px">');
 
 const TokoCahayaSRC = L.marker([-7.820178936812015, 110.36809766063165], {icon: SRCIcons})
 .bindPopup('<b>Toko Cahaya SRC Chusniatul</b><br/>Jl. Parangtritis No.103, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55143<br><br> <img src="./pedagang/TokoCahayaSRC1.png" style="width:200px">');
@@ -1611,8 +1677,14 @@ const Toko32SRC = L.marker([-7.828221993255508, 110.37783684276535], {icon: SRCI
 const TokoPudjoMulyonoSRC = L.marker([-7.818101566689879, 110.39188901833376], {icon: SRCIcons})
 .bindPopup('<b>Toko Pudjo Mulyono SRC</b><br/>Jl. Perintis Kemerdekaan, Pandeyan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55161<br><br> <img src="./pedagang/TokoPudjoMulyonoSRC1.png" style="width:200px"><br> <img src="./pedagang/TokoPudjoMulyonoSRC2.png" style="width:200px">');
 
+const TokoSRC40 = L.marker([-7.808322823466539, 110.3544088278564], {icon: SRCIcons})
+.bindPopup('<b>Toko SRC 40</b><br/>Jl. Letjen S.Parman No.20, 55233, Notoprajan, Ngampilan, Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br><br> <img src="./pedagang/TokoSRC40.png" style="width:200px">');
 
+const MomonCellindoSRC = L.marker([-7.79571436509209, 110.38913453979013], {icon: SRCIcons})
+.bindPopup('<b>Momon Cellindo</b><br/>Jl. Timoho II No.19, RT.02/RW.01, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55165<br>0818465616<br><br> <img src="./pedagang/MomonCellindoSRC.png" style="width:200px"> ');
 
+const SRCRina = L.marker([-7.805120270432287, 110.34660748340731], {icon: SRCIcons})
+.bindPopup('<b>SRC Rina</b><br/>Jl. Nakulo No.55, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55252<br><br> <img src="./pedagang/SRCRina.png" style="width:200px"> ');
 
 
 
@@ -1644,12 +1716,18 @@ const WarungHartiniGGSP = L.marker([-7.824566253867497, 110.37823179040001], {ic
 const TokoKaruniaGGSP = L.marker([-7.8186655750451886, 110.39309510289236], {icon: GGSPIcons})
 .bindPopup('<b>Toko Karunia GGSP</b><br/>Jl. Perintis Kemerdekaan No.#66, Pandeyan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55161<br>087839195305<br><br> <img src="./pedagang/TokoKaruniaGGSP1.png" style="width:200px">');
 
-
 const TokoIrmaGGSP = L.marker([-7.812095613410159, 110.35008535565446], {icon: GGSPIcons})
 .bindPopup('<b>Toko Irma GGSP</b><br/>Jl. Sugeng Jeroni No.77A, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55184<br>081803158286<br><br> <img src="./pedagang/TokoIrmaGGSP_1.png" style="width:200px">');
 
 const Toko45 = L.marker([-7.786192098441111, 110.38706066260185], {icon: GGSPIcons})
 .bindPopup('<b>Toko 45</b><br/>Jl. Langensari No.45, Klitren, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55221<br><br> <img src="./pedagang/Toko45.png" style="width:200px">');
+
+const TokoSembakoPojok = L.marker([-7.788290591156511, 110.35734477308134], {icon: GGSPIcons})
+.bindPopup('<b>Toko Sembako Pojok</b><br />Jl. Tentara Rakyat Mataram, Bumijo, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55231<br>087839559286<br><br> <img src="./pedagang/TokoSembakoPojok.png" style="width:200px">');
+
+
+const TokoMintoGGSP = L.marker([-7.813724391278925, 110.37170406031659], {icon: GGSPIcons})
+.bindPopup('<b>Toko Minto</b><br/>Jl. Ireda No.157, Keparakan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55152<br><br> <img src="./pedagang/TokoMintoGGSP.png" style="width:200px"> ');
 
 
 
@@ -1731,7 +1809,7 @@ const TokoRezaMadura = L.marker([-7.827712335612328, 110.39007331695082], {icon:
 .bindPopup('<b>Toko Reza Madura</b><br/>Jl. Imogiri Tim., Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./pedagang/TokoRezaMadura1.png" style="width:200px">');
 
 const BarrenJaya = L.marker([-7.81954704008621, 110.36797240305805], {icon: WarungMaduraIcons})
-.bindPopup('<b>Barren Jaya</b><br/>Jl. Parangtritis No.70, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br><br> <img src="./pedagang/BarrenJaya1.png" style="width:200px">');
+.bindPopup('<b>Garren Jaya</b><br/>Jl. Parangtritis No.70, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br><br> <img src="./pedagang/BarrenJaya1.png" style="width:200px">');
 
 const WarungMadura24Jam = L.marker([-7.82519399285734, 110.38420566309043], {icon: WarungMaduraIcons})
 .bindPopup('<b>Warung Madura 24 Jam</b><br/>Jl. Sorogenen No.27a, RT.037/RW.015, Kel. Sorotan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/WarungMadura24Jam1.png" style="width:200px">');
@@ -1763,6 +1841,18 @@ const TokoKelontongALBAROKAH3 = L.marker([-7.809036712640427, 110.35022576785012
 const TokoRofita = L.marker([-7.79626493836622, 110.39513595711539], {icon: WarungMaduraIcons})
 .bindPopup('<b>Toko Rofita</b><br />Jl. Balirejo, Muja Muju, Kec. Umbulharjo, Kabupaten Bantul, Daerah Istimewa Yogyakarta 55198<br><br> <img src="./pedagang/TokoRofita.png" style="width:200px">');
 
+const LuckManMadura = L.marker([-7.824358408885077, 110.38154226719891], {icon: WarungMaduraIcons})
+.bindPopup('<b>Luck Man Madura</b><br/>Jl. Nitikan Baru, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/LuckManMadura.png" style="width:200px">');
+
+const WarungMaduraNa = L.marker([-7.816626335627208, 110.38015424280762], {icon: WarungMaduraIcons})
+.bindPopup('<b>Warung Madura</b><br/>Jl. Pakel Baru, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>089670329837<br><br> <img src="./pedagang/WarungMaduraNa1.png" style="width:200px">');
+
+const WarungMaduraFamily = L.marker([-7.794617960625409, 110.38542611129789], {icon: WarungMaduraIcons})
+.bindPopup('<b>Warung Madura Family</b><br/>Jl. Gondosuli No.3, Semaki, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br><br> <img src="./pedagang/WarungMaduraFamily.png" style="width:200px"> ');
+
+const MaduraTokoFitri = L.marker([-7.81415499093981, 110.37205988416636], {icon: WarungMaduraIcons})
+.bindPopup('<b>Toko Kelontong dan Pom Mini Toko Fitri</b><br/>Jl. Ireda No.175, Keparakan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55152<br><br> <img src="./pedagang/MaduraTokoFitri.png" style="width:200px"> ');
+
 
 
 
@@ -1770,11 +1860,14 @@ const TokoRofita = L.marker([-7.79626493836622, 110.39513595711539], {icon: Waru
 
 
 <!-- DRP
-const TokoSholeh = L.marker([-7.817207529930137, 110.39808780467752], {icon: WarungSembakoIcon})
+const TokoSholeh = L.marker([-7.817207529930137, 110.39808780467752], {icon: DRPIcons})
 .bindPopup('<b>Toko Sholeh DRP</b><br/>Jl. Retno Dumilah No.35 D, Pilahan, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>089649487527<br><br> <img src="./pedagang/TokoSholeh1.png" style="width:200px">');
 
-const TokoHarumDRP = L.marker([-7.810673280273519, 110.39927049253487], {icon: WarungSembakoIcon})
+const TokoHarumDRP = L.marker([-7.810673280273519, 110.39927049253487], {icon: DRPIcons})
 .bindPopup('<b>Toko Harum DRP</b><br/>Jl. Rejowinangun No.28, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>(0274)386774<br><br> <img src="./pedagang/TokoHarumDRP1.png" style="width:200px">');
+
+const HHMartDRP = L.marker([-7.8022171054479434, 110.35121895891619], {icon: DRPIcons})
+.bindPopup('<b>HH Mart DRP</b><br/>Jl. Antasena, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55252<br>087739055865<br><br> <img src="./pedagang/HHMartDRP.png" style="width:200px"> ');
 
 
 
@@ -1782,7 +1875,7 @@ const TokoHarumDRP = L.marker([-7.810673280273519, 110.39927049253487], {icon: W
 
 
 <!-- Prima Freshmart
-const PrimaFreshmartSorogenen = L.marker([-7.824898265554243, 110.38147213131448], {icon: WarungSembakoIcon})
+const PrimaFreshmartSorogenen = L.marker([-7.824898265554243, 110.38147213131448], {icon: PrimaIcons})
 .bindPopup('<b>Prima Freshmart Sorogenen</b><br/>Jl. Sorogenen, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>(0517)0107442<br><br> <img src="./pedagang/PrimaFreshmartSorogenen1.png" style="width:200px">');
 
 
@@ -1821,6 +1914,21 @@ const DepotAyamSegarBuKoes = L.marker([-7.814248326601823, 110.39859981301642], 
 
 const MbahMardiBroiler = L.marker([-7.8133106544022235, 110.39555564047349], {icon: WarungSembakoIcon})
 .bindPopup('<b>Mbah Mardi Broiler</b><br/>Jl. Ki Penjawi No.26, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>081215809693<br><br> <img src="./pedagang/MbahMardiBroiler1.png" style="width:200px">');
+
+const DagingSapiBuNah = L.marker([-7.798356063611424, 110.37071404416247], {icon: WarungSembakoIcon})
+.bindPopup('<b>Daging Sapi Bu Nah</b><br/>Jl. Jagalan - Beji No.33, Purwokinanti, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br>081328438876<br>081328438876<br><br> <img src="./pedagang/DagingSapiBuNah1.png" style="width:200px"><img src="./pedagang/DagingSapiBuNah2.png" style="width:200px">');
+
+const DepotDagingAyamSegarPutraSuryaWijaya = L.marker([-7.809884056257508, 110.3497930655607], {icon: WarungSembakoIcon})
+.bindPopup('<b>Depot Daging Ayam Segar Putra Surya Wijaya</b><br/>Jl. Bugisan, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251<br>081328330032 / 085225911300<br><br> <img src="./pedagang/DepotDagingAyamSegarPutraSuryaWijaya.png" style="width:200px">');
+
+const PorkerMeatshop = L.marker([-7.79281669882673, 110.35425338274585], {icon: WarungSembakoIcon})
+.bindPopup('<b>Porker Meatshop - Pork Supplier Jogja</b><br/>Sudagaran TR 3 no834, RT.41/RW.11, Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244<br>085742756576<br><br> <img src="./pedagang/PorkerMeatshop1.png" style="width:200px">');
+
+const DagingSapiEmbunPagi = L.marker([-7.799348280691281, 110.37085662453786], {icon: WarungSembakoIcon})
+.bindPopup('<b>Daging Sapi Embun Pagi</b><br/>Jl. Jagalan - Beji No.23, Purwokinanti, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br>085729316996<br><br> <img src="./pedagang/DagingSapiEmbunPagi1.png" style="width:200px"><img src="./pedagang/DagingSapiEmbunPagi2.png" style="width:200px">');
+
+const DagingSapiBuIta = L.marker([-7.800466941780622, 110.37105182756751], {icon: WarungSembakoIcon})
+.bindPopup('<b>Daging Sapi Bu Ita</b><br/>Jl. Jagalan - Beji No.19 B, Purwokinanti, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55122<br>08122983727<br><br> <img src="./pedagang/DagingSapiBuIta.png" style="width:200px">');
 
 
 
@@ -1875,7 +1983,6 @@ const MMBuah = L.marker([-7.825656083037432, 110.38830395997493], {icon: WarungS
 
 const AylaKrisnaBuah = L.marker([-7.825312888771499, 110.38636368544991], {icon: WarungSembakoIcon})
 .bindPopup('<b>Ayla Krisna Buah</b><br/>Jl. Tegalturi No.25, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br>087838861599<br><br> <img src="./pedagang/AylaKrisnaBuah1.png" style="width:200px">');
-
 
 const TokoBuahNurAini = L.marker([-7.823267518736104, 110.37774512146378], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Buah Nur Aini</b><br/>Jl. Lowanu No.70, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>081804156338<br><br> <img src="./pedagang/TokoBuahNurAini1.png" style="width:200px"><br> <img src="./pedagang/TokoBuahNurAini2.png" style="width:200px">');
@@ -1968,6 +2075,25 @@ const SumberRejeki = L.marker([-7.825087463190778, 110.39019978888179], {icon: W
 const KiosBerasHarum = L.marker([-7.812066399866432, 110.38970625370746], {icon: WarungSembakoIcon})
 .bindPopup('<b>Kios Beras Harum</b><br />Jl. Prof. DR. Soepomo Sh, Warungboto, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br>082225434426<br><br> <img src="./pedagang/KiosBerasHarum1.png" style="width:200px"> ');
 
+const SembakoEDEN88 = L.marker([-7.783380061745322, 110.35282120295214], {icon: WarungSembakoIcon})
+.bindPopup('<b>Sembako EDEN88</b><br />Jl. Tompeyan No.1, Tegalrejo, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244<br>087747878983<br><br> <img src="./pedagang/SembakoEDEN881.png" style="width:200px">');
+
+
+
+
+
+
+
+
+
+
+
+const AgenGasLPGNogobondo = L.marker([-7.809306672725179, 110.39633419875841], {icon: WarungSembakoIcon})
+.bindPopup('<b>Agen Gas LPG Nogobondo</b><br/>Jl. Nogobondo No.14, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br><br> <img src="./lpg/AgenGasLPGNogobondo1.png" style="width:200px">');
+
+
+
+
 
 
 
@@ -1976,6 +2102,9 @@ const KiosBerasHarum = L.marker([-7.812066399866432, 110.38970625370746], {icon:
 
 
 <!-- CAMPUR
+
+const TokoSakura = L.marker([-7.814660585135336, 110.37402936005003], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sakura</b><br />Jalan Kolonel Sugiono, Keparakan Kidul, Mergangsan 1/1255, Keparakan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55152<br>(0274)418427<br><br> <img src="./pedagang/TokoSakura1.png" style="width:200px">');
 
 
 const AlifMart = L.marker([-7.820218923668086, 110.37320668995984], {icon: WarungSembakoIcon})
@@ -2036,7 +2165,7 @@ const TokoBasuki = L.marker([-7.813463942012679, 110.39664605162508], {icon: War
 
 
 const TokoSembakoUDRiskoJaya = L.marker([-7.810444714399625, 110.3977843653166], {icon: WarungSembakoIcon})
-.bindPopup('<b>Toko Sembako UD Risko Jaya Rejowinangun</b><br />Jl. Rejowinangun No.38, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>081388358819<br><br> <img src="./pedagang/TokoSembakoUDRiskoJaya1.png" style="width:200px">');
+.bindPopup('<b>Toko Sembako UD Risko Jaya Rejowinangun</b><br />Jl. Rejowinangun No.38, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>(Pojok Masjid Al Fattah Rejowinangun)<br>081388358819<br><br> <img src="./pedagang/TokoSembakoUDRiskoJaya1.png" style="width:200px"> <img src="./pedagang/TokoSembakoUDRiskoJayaRejowinangun.png" style="width:200px"> <img src="./pedagang/TokoSembakoUDRiskoJayaRejowinangun2.jpeg" style="width:200px">');
 
 const TokoRayyaGrosir = L.marker([-7.810022792345248, 110.3977419294337], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Rayya Grosir</b><br />Jl. Kebun Raya No.36, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br><br> <img src="./pedagang/TokoRayyaGrosir1.png" style="width:200px">');
@@ -2051,11 +2180,7 @@ const TokoKelontongRizqiRuhi = L.marker([-7.803949215297079, 110.39482565481097]
 const TokoAneka = L.marker([-7.8018285585876885, 110.3859328714397], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Aneka</b><br />Jl. Kusumanegara, Semaki, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55167<br>081904224970<br><br> <img src="./pedagang/TokoAneka1.png" style="width:200px">');
 
-const TokoSembakoPojok = L.marker([-7.788290591156511, 110.35734477308134], {icon: WarungSembakoIcon})
-.bindPopup('<b>Toko Sembako Pojok</b><br />Jl. Tentara Rakyat Mataram, Bumijo, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55231<br>087839559286<br><br> <img src="./pedagang/TokoSembakoPojok.png" style="width:200px">');
 
-const SembakoEDEN88 = L.marker([-7.783380061745322, 110.35282120295214], {icon: WarungSembakoIcon})
-.bindPopup('<b>Sembako EDEN88</b><br />Jl. Tompeyan No.1, Tegalrejo, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244<br>087747878983<br><br> <img src="./pedagang/SembakoEDEN881.png" style="width:200px">');
 
 const WarungBuSarjinah = L.marker([-7.795373702940278, 110.35386549296996], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Bu Sarjinah</b><br />Pakuncen, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55253<br>(0274)619525<br><br> <img src="./pedagang/WarungBuSarjinah1.png" style="width:200px">');
@@ -2088,8 +2213,6 @@ const AbMartSegarPraktis = L.marker([-7.821496906948585, 110.36168014182492], {i
 <!-- .bindPopup('<b>Biru Laut Indonesia</b><br />Jl. Sisingamangaraja No.84, Brontokusuman, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br>082329562671<br><br> <img src="./pedagang/BiruLautIndonesia1.png" style="width:200px">');
 
 
-const TokoSakura = L.marker([-7.814660585135336, 110.37402936005003], {icon: WarungSembakoIcon})
-.bindPopup('<b>Toko Sakura</b><br />Jalan Kolonel Sugiono, Keparakan Kidul, Mergangsan 1/1255, Keparakan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55152<br>(0274)418427<br><br> <img src="./pedagang/TokoSakura1.png" style="width:200px">');
 
 const TokoMurni = L.marker([-7.793346956412574, 110.37175663558212], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Murni</b><br />Jl. Mas Suharto No.41A, Tegal Panggung, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55212<br>(0274)545110<br><br> <img src="./pedagang/TokoMurni1.png" style="width:200px">');
@@ -2240,14 +2363,11 @@ const WarungAgus = L.marker([-7.822929591169395, 110.36791623054246], {icon: War
 const TokoKunciBerkat = L.marker([-7.8240479822652516, 110.36760857300033], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Kunci Berkat</b><br/>Jl. Parangtritis No.142, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55143<br>082133691624<br><br> <img src="./pedagang/TokoKunciBerkat1.png" style="width:200px">');
 
-
-
 const WarungHero = L.marker([-7.828667258446497, 110.39010830501012], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Hero</b><br/>Jl. Imogiri Tim. No.127, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br>081804093127<br><br> <img src="./pedagang/WarungHero1.png" style="width:200px">');
 
 const TokoPurnomo = L.marker([-7.827388376255776, 110.39017223844063], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Purnomo</b><br/>Jl. Imogiri Tim. No.117, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br>081328322826<br><br> <img src="./pedagang/TokoPurnomo1.png" style="width:200px">');
-
 
 const TokoSurono = L.marker([-7.8294120712536985, 110.38781520161804], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Surono</b><br/>Jl. Mendung Warih, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br><br> <img src="./pedagang/TokoSurono1.png" style="width:200px">');
@@ -2255,18 +2375,14 @@ const TokoSurono = L.marker([-7.8294120712536985, 110.38781520161804], {icon: Wa
 const KiosPojokPakDarno = L.marker([-7.825434427558616, 110.38519967907727], {icon: WarungSembakoIcon})
 .bindPopup('<b>Kios Pojok Pak Darno</b><br/>Jl. Sorogenen, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/KiosPojokPakDarno1.png" style="width:200px">');
 
-
 const WarungBuTri = L.marker([-7.825398322727632, 110.38448636540723], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Bu Tri</b><br/>Jl. Sorogenen, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/WarungBuTri1.png" style="width:200px">');
 
 const WarungSorogenen = L.marker([-7.825346415206608, 110.3839668050385], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Sorogenen GGSP</b><br/>Jl. Sorogenen, Kel. Sorotan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/WarungSorogenen1.png" style="width:200px">');
 
-
 const TokoBerkahJayaSorogenen = L.marker([-7.82502502488571, 110.38260111696269], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Berkah Jaya</b><br/>Jl. Sorogenen No.17-21, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/TokoBerkahJayaSorogenen1.png" style="width:200px">');
-
-
 
 const WarungSembakoSorogenen = L.marker([-7.824731087341124, 110.3810450166484], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Sembako Sorogenen</b><br/>Jl. Sorogenen, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/WarungSembakoSorogenen1.png" style="width:200px">');
@@ -2292,36 +2408,20 @@ const WarungKelontongSMP = L.marker([-7.824420494410157, 110.37536741331395], {i
 const TokoCantika = L.marker([-7.825301657476151, 110.3761423878394], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Cantika</b><br/>Jl. Tritunggal, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/TokoCantika1.png" style="width:200px">');
 
-
 const Toko53 = L.marker([-7.8199286445778196, 110.38555317805736], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko 53</b><br/>Jl. Sidikan No.53, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>0817461053<br><br> <img src="./pedagang/Toko531.png" style="width:200px">');
 
 const TokoPanggih = L.marker([-7.819479445529719, 110.38542623478277], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Panggih</b><br/>Jl. Sidikan, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55161<br><br> <img src="./pedagang/TokoPanggih1.png" style="width:200px">');
 
-
-
 const WarungFio = L.marker([-7.818509199256424, 110.38454930504051], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Fio</b><br/>Jl. Sidikan, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55161<br><br> <img src="./pedagang/WarungFio1.png" style="width:200px">');
-
 
 const WarungMiniTibaUrip = L.marker([-7.809737889778506, 110.39632500660852], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Mini Tiba Urip</b><br/>Jl. Nogobondo No.18, RT.34/RW.08, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>087839950030<br><br> <img src="./pedagang/WarungMiniTibaUrip1.png" style="width:200px">');
 
 const WarungBuHarni = L.marker([-7.809801039869499, 110.39644332796802], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Bu Harni</b><br/>Jl. Nogobondo, Gang Andini, RT.34/RW.08, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>082226724500<br><br> <img src="./pedagang/WarungBuHarni1.png" style="width:200px">');
-
-
-
-
-
-
-
-
-
-
-const AgenGasLPGNogobondo = L.marker([-7.809306672725179, 110.39633419875841], {icon: WarungSembakoIcon})
-.bindPopup('<b>Agen Gas LPG Nogobondo</b><br/>Jl. Nogobondo No.14, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br><br> <img src="./lpg/AgenGasLPGNogobondo1.png" style="width:200px">');
 
 const TokoGulaJawa = L.marker([-7.833878621861403, 110.3896990651069], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Gula Merah Cap HT</b><br/>Jl. Singoranu, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br>081390111362<br><br> <img src="./pedagang/TokoGulaJawa1.png" style="width:200px">');
@@ -2341,9 +2441,6 @@ const WarungSayurBuWelas = L.marker([-7.81644333239074, 110.37825058140142], {ic
 const TokoMbakIka = L.marker([-7.81674140405334, 110.37835023190773], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Mbak Ika</b><br/>Jl. Sorosutan, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>(0274)7480702<br><br> <img src="./pedagang/TokoMbakIka1.png" style="width:200px">');
 
-const WarungMaduraNa = L.marker([-7.816626335627208, 110.38015424280762], {icon: WarungSembakoIcon})
-.bindPopup('<b>Warung Madura</b><br/>Jl. Pakel Baru, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>089670329837<br><br> <img src="./pedagang/WarungMaduraNa1.png" style="width:200px">');
-
 const TokoLuput = L.marker([-7.816813219184049, 110.38002993208684], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Kelontong</b><br/>Jl. Pakel Baru Utara, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>08562565854<br><br> <img src="./pedagang/TokoLuput1.png" style="width:200px">');
 
@@ -2356,12 +2453,8 @@ const TokoLukito = L.marker([-7.822045333349895, 110.37972974782276], {icon: War
 const MiniMallDelima = L.marker([-7.822100167945684, 110.38059514726493], {icon: WarungSembakoIcon})
 .bindPopup('<b>Mini Mall Delima</b><br/>JL. Sidokabul, RT / RW 25/7, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br>085694367711<br><br> <img src="./pedagang/MiniMallDelima1.png" style="width:200px">');
 
-
 const TokoBuImam = L.marker([-7.792653092861707, 110.35405084862968], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Bu Imam</b><br/>Jl. Saudagaran No.45, Tegalrejo, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244<br><br> <img src="./pedagang/TokoBuImam1.png" style="width:200px">');
-
-const PorkerMeatshop = L.marker([-7.79281669882673, 110.35425338274585], {icon: WarungSembakoIcon})
-.bindPopup('<b>Porker Meatshop - Pork Supplier Jogja</b><br/>Sudagaran TR 3 no834, RT.41/RW.11, Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55244<br>085742756576<br><br> <img src="./pedagang/PorkerMeatshop1.png" style="width:200px">');
 
 const SmartMinimart = L.marker([-7.793224541820173, 110.35757826230504], {icon: WarungSembakoIcon})
 .bindPopup('<b>Smart Minimart</b><br/>Jl. Kemetiran Kidul No.91, Pringgokusuman, Gedong Tengen, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55272<br>(0274)524514<br><br> <img src="./pedagang/SmartMinimart1.png" style="width:200px">');
@@ -2381,21 +2474,14 @@ const SembakoBugisanKusuma = L.marker([-7.808961726501726, 110.35024038677835], 
 const SembakoKu = L.marker([-7.8099730837985115, 110.35002697731629], {icon: WarungSembakoIcon})
 .bindPopup('<b>Sembako‘Ku</b><br/>Jl. Bugisan No.35, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251<br>089525616264<br><br> <img src="./pedagang/SembakoKu_1.png" style="width:200px"><img src="./pedagang/SembakoKu_2.png" style="width:200px">');
 
-const DepotDagingAyamSegarPutraSuryaWijaya = L.marker([-7.809884056257508, 110.3497930655607], {icon: WarungSembakoIcon})
-.bindPopup('<b>Depot Daging Ayam Segar Putra Surya Wijaya</b><br/>Jl. Bugisan, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251<br>081328330032 / 085225911300<br><br> <img src="./pedagang/DepotDagingAyamSegarPutraSuryaWijaya.png" style="width:200px">');
-
 const TokoCastella24 = L.marker([-7.8100248947220825, 110.34961268700503], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Castella 24</b><br/>Jl. Madubronto No.5, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br>085333802220<br><br> <img src="./pedagang/TokoCastella24.png" style="width:200px">');
 
 const TokoPapaEnzo = L.marker([-7.809913850584043, 110.34887536759922], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Papa Enzo</b><br/>Jl. Madubronto No.13, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./pedagang/TokoPapaEnzo.png" style="width:200px">');
 
-
 const WarungBuDarmo = L.marker([-7.817356299709546, 110.3527759349531], {icon: WarungSembakoIcon})
 .bindPopup('<b>Warung Bu Darmo</b><br/>Jl. Prapanca No.40, Gedongkiwo, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55142<br>085228857584<br><br> <img src="./pedagang/WarungBuDarmo.png" style="width:200px">');
-
-const LuckManMadura = L.marker([-7.824358408885077, 110.38154226719891], {icon: WarungSembakoIcon})
-.bindPopup('<b>Luck Man Madura</b><br/>Jl. Nitikan Baru, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/LuckManMadura.png" style="width:200px">');
 
 const SayurSembakoBerkahIbu = L.marker([-7.817755866037598, 110.35920981180683], {icon: WarungSembakoIcon})
 .bindPopup('<b>Sayur dan Sembako Berkah Ibu</b><br/>Jl. Suryodiningratan No.32, Suryodiningratan, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55141<br><br> <img src="./pedagang/SayurSembakoBerkahIbu.png" style="width:200px">');
@@ -2421,9 +2507,6 @@ const TokoSembakoRamaJayaMadura = L.marker([-7.808223977994936, 110.352683203905
 const TokoTamansari = L.marker([-7.808092138490991, 110.35302710873233], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Tamansari</b><br/>Jl. Letjen S.Parman No.48, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251<br><br> <img src="./pedagang/TokoTamansari.png" style="width:200px">');
 
-const TokoSRC40 = L.marker([-7.808322823466539, 110.3544088278564], {icon: WarungSembakoIcon})
-.bindPopup('<b>Toko SRC 40</b><br/>Jl. Letjen S.Parman No.20, 55233, Notoprajan, Ngampilan, Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br><br> <img src="./pedagang/TokoSRC40.png" style="width:200px">');
-
 const TokoSembakoBunga = L.marker([-7.808392965416282, 110.3550103847009], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Sembako Bunga</b><br/>Jl. Letjen S.Parman No.22, Notoprajan, Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55262<br><br> <img src="./pedagang/TokoSembakoBunga.png" style="width:200px">');
 
@@ -2432,7 +2515,6 @@ const TokoGunturSyifa = L.marker([-7.799777928458153, 110.3620038769638], {icon:
 
 const SembakoPatuk = L.marker([-7.797557663536981, 110.36153945473808], {icon: WarungSembakoIcon})
 .bindPopup('<b>Sembako Patuk</b><br/>Jl. Karel Sasuit Tubun No.6, Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55261<br><br> <img src="./pedagang/SembakoPatuk.png" style="width:200px">');
-
 
 const KiosUnggasPathok = L.marker([-7.797557663536981, 110.36153945473808], {icon: WarungSembakoIcon})
 .bindPopup('<b>Kios Unggas Pathok</b><br/>Jalan Aip 2 Jl. Karel Sasuit Tubun No.48, Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55261<br><br> <img src="./pedagang/KiosUnggasPathok.png" style="width:200px">');
@@ -2446,22 +2528,158 @@ const AriniToko = L.marker([-7.791634701123607, 110.38775781185315], {icon: Waru
 const TokoJihan = L.marker([-7.791830028271068, 110.38836481017513], {icon: WarungSembakoIcon})
 .bindPopup('<b>Toko Jihan</b><br/>Jl. Melati Wetan No.35, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./pedagang/TokoJihan.png" style="width:200px">');
 
-const DagingSapiBuNah = L.marker([-7.798356063611424, 110.37071404416247], {icon: WarungSembakoIcon})
-.bindPopup('<b>Daging Sapi Bu Nah</b><br/>Jl. Jagalan - Beji No.33, Purwokinanti, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br>081328438876<br>081328438876<br><br> <img src="./pedagang/DagingSapiBuNah1.png" style="width:200px"><img src="./pedagang/DagingSapiBuNah2.png" style="width:200px">');
+const TokoAlIkhlaas = L.marker([-7.805193132547668, 110.39196686465223], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Al Ikhlaas</b><br/>Jl. Mondoliko No.100, Muja Muju, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55164<br><br> <img src="./pedagang/TokoAlIkhlaas.png" style="width:200px"> <img src="./pedagang/TokoAlIkhlaas2.png" style="width:200px">');
 
-const DagingSapiEmbunPagi = L.marker([-7.799348280691281, 110.37085662453786], {icon: WarungSembakoIcon})
-.bindPopup('<b>Daging Sapi Embun Pagi</b><br/>Jl. Jagalan - Beji No.23, Purwokinanti, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br>085729316996<br><br> <img src="./pedagang/DagingSapiEmbunPagi1.png" style="width:200px"><img src="./pedagang/DagingSapiEmbunPagi2.png" style="width:200px">');
+const TokoManunggal2 = L.marker([-7.7894922010118455, 110.3934506216573], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Manunggal 2</b><br/>Jl. Timoho No.107, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./pedagang/TokoManunggal2.png" style="width:200px"> ');
 
-const DagingSapiBuIta = L.marker([-7.800466941780622, 110.37105182756751], {icon: WarungSembakoIcon})
-.bindPopup('<b>Daging Sapi Bu Ita</b><br/>Jl. Jagalan - Beji No.19 B, Purwokinanti, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55122<br>08122983727<br><br> <img src="./pedagang/DagingSapiBuIta.png" style="width:200px">');
+const SembakoEdelweiss = L.marker([-7.789580728259231, 110.39230775085339], {icon: WarungSembakoIcon})
+.bindPopup('<b>Sembako Edelweiss*</b><br/>Jl. Kusuma No.890, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br>085878322232<br><br> <img src="./pedagang/SembakoEdelweiss.png" style="width:200px"> ');
 
-<!-- al ikhlaas   TokoAlIkhlaas.png
+const TokoPakIwan = L.marker([-7.789912767661382, 110.38980712943078], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Pak Iwan</b><br/>Jl. Kusuma Jl. Gendeng GK 4 No.709, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br>082252068718<br><br> <img src="./pedagang/TokoPakIwan.png" style="width:200px"> ');
+
+const FishGarage = L.marker([-7.789930977909336, 110.38861103217155], {icon: WarungSembakoIcon})
+.bindPopup('<b>Fish Garage (Ikan Giling & Frozen Food)</b><br/>Jl. Gendeng GK 4 No.639, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br>081329097566<br><br> <img src="./pedagang/FishGarage.png" style="width:200px"> ');
+
+const WarungMerah = L.marker([-7.790731652776981, 110.38862239205726], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Merah</b><br/>Jl. Kusuma, Baciro, Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./pedagang/WarungMerah.png" style="width:200px"> ');
+
+const WarungSayurCantel = L.marker([-7.793259290004233, 110.38800430487433], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Sayur Cantel</b><br/>Jl. Cantel No.33, Baciro, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br>081350405900<br><br> <img src="./pedagang/WarungSayurCantel.png" style="width:200px"> ');
+
+const TokoKelontongPakEdi = L.marker([-7.793086913575936, 110.38749951776447], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Kelontong Pak Edi</b><br/>Gg. Satria I No.325, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./pedagang/TokoKelontongPakEdi.png" style="width:200px"> ');
+
+const WarungBuDwi = L.marker([-7.794303667361798, 110.38732815334687], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Bu Dwi</b><br/>Sanggrahan UH1/636, Gg. Perintis No.628, RT.07/RW.03, Semaki, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br>085836430985<br><br> <img src="./pedagang/WarungBuDwi.png" style="width:200px"> ');
+
+const WarungMarley642 = L.marker([-7.794322334642126, 110.38680951469303], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Marley 642</b><br/>Sanggrahan UH1/642, Semaki, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166<br>089512972023<br><br> <img src="./pedagang/WarungMarley642.png" style="width:200px"> ');
+
+const TokoFauzy = L.marker([-7.794239723178702, 110.38572134603223], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Fauzy</b><br/>Jl. Gondosuli No.35, Baciro, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./pedagang/TokoFauzy.png" style="width:200px"> ');
+
+const TokoSembakoMasAbdul = L.marker([-7.822704338275796, 110.39921914965451], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sembako Mas Abdul</b><br/>Jl. Nyi Pembayun No.36, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br>08562939068<br><br> <img src="./pedagang/TokoSembakoMasAbdul.png" style="width:200px"> ');
+
+const TokoDossis = L.marker([-7.820889707980583, 110.39856921740719], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Dossis</b><br/>Jl. Ringin Putih No.469, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br>02744437355<br><br> <img src="./pedagang/TokoDossis.png" style="width:200px"> ');
+
+const TokoGiyanto = L.marker([-7.821255499804129, 110.39848601092588], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Giyanto</b><br/>Jl. Ringin Putih, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br><br> <img src="./pedagang/TokoGiyanto.png" style="width:200px"> ');
+
+const TokoTukiman = L.marker([-7.822318401475721, 110.39843774326422], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Tukiman</b><br/>Jl. Nyi Pembayun No.31, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br>081283870071<br><br> <img src="./pedagang/TokoTukiman.png" style="width:200px"> ');
+
+const TokoPakNardi = L.marker([-7.825497775547398, 110.39460490045056], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Pak Nardi</b><br/>Jl. Nyi Pembayun, Prenggan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55172<br>081328737076<br><br> <img src="./pedagang/TokoPakNardi.png" style="width:200px"> ');
+
+const TokoBuahLancarAbadi = L.marker([-7.829357269122493, 110.38993741390279], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Buah Lancar Abadi</b><br/>Jl. Imogiri Timur, Depan KUA No.135, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br><br> <img src="./pedagang/TokoBuahLancarAbadi.png" style="width:200px"> ');
+
+const FrenzaMart = L.marker([-7.829719149893772, 110.38458937420953], {icon: WarungSembakoIcon})
+.bindPopup('<b>Frenza Mart</b><br/>Jl. Singoranu, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br>081227024550<br><br> <img src="./pedagang/FrenzaMart.png" style="width:200px"> ');
+
+const TokoBaru = L.marker([-7.830329467755246, 110.37882544141313], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Baru</b><br/>Wirosaban UH 6/ 642 RT55, RW.14, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./pedagang/TokoBaru.png" style="width:200px"> ');
+
+const LIAGroceryStore = L.marker([-7.811944238339305, 110.37001147871474], {icon: WarungSembakoIcon})
+.bindPopup('<b>LIA Grocery Store</b><br/>Jl. Dipowinatan MG 1 No.316, Keparakan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55152<br>087838112484<br><br> <img src="./pedagang/LIAGroceryStore.png" style="width:200px"> ');
+
+const VitaBroilerPemotonganAyam = L.marker([-7.811801360850169, 110.3723423522653], {icon: WarungSembakoIcon})
+.bindPopup('<b>Vita Broiler Pemotongan Ayam</b><br/>Jl. Kolonel Sugiyono, Keparakan, Kec. Mergangsan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55153<br>085743568568<br><br> <img src="./pedagang/VitaBroilerPemotonganAyam.png" style="width:200px"> ');
+
+const WarungBerkahBuRirinMinggiran = L.marker([-7.822705221191414, 110.36000487610546], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Berkah Bu Ririn Minggiran</b><br/>Gg. Pisang, Suryodiningratan, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55141<br>087734274188<br><br> <img src="./pedagang/WarungBerkahBuRirinMinggiran.png" style="width:200px"> ');
+
+const TokoBuNarti = L.marker([-7.822025148656811, 110.36014334107766], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Bu Narti</b><br/>Jl. Minggiran, Suryodiningratan, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55141<br><br> <img src="./pedagang/TokoBuNarti.png" style="width:200px"> ');
+
+const KiosBerasGedongkuning = L.marker([-7.820002016900276, 110.40123894052371], {icon: WarungSembakoIcon})
+.bindPopup('<b>Kios Beras Jl. Gedongkuning</b><br/>Jl. Gedongkuning, Purbayan, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br>Samping Purnomo Teknik (Spul Dinamo Listrik)<br><br> <img src="./pedagang/KiosBerasGedongkuning.jpeg" style="width:200px"> ');
+
+const TokoSembakoLestariGiwangan = L.marker([-7.832226671587716, 110.39165885039665], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sembako Lestari Giwangan</b><br/>Jl. Pemukti, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55163<br>082227198279<br><br> <img src="./pedagang/TokoSembakoLestariGiwangan1.png" style="width:200px"> <img src="./pedagang/TokoSembakoLestariGiwangan2.png" style="width:200px">');
+
+const WarungBuArum = L.marker([-7.820667108433889, 110.35532497166807], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Bu Arum</b><br/>Jl. Bantul No.90, Gedongkiwo, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55142<br>083146633317<br><br> <img src="./pedagang/WarungBuArum.png" style="width:200px"> ');
+
+const TokoSembakoRamiaMadura = L.marker([-7.819962023038563, 110.35537034356568], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Sembako Ramia Madura</b><br/>Jl. Bantul KM.1, RT.03, Gedongkiwo, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55142<br><br> <img src="./pedagang/TokoSembakoRamiaMadura.png" style="width:200px"> ');
+
+const TokoHarapanBaru = L.marker([-7.808632948405257, 110.35528509387055], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Harapan Baru</b><br/>Jl. Letjen S.Parman No.3, Gedongkiwo, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55142<br>0274377527<br><br> <img src="./pedagang/TokoHarapanBaru.png" style="width:200px"> ');
+
+const TokoEsti = L.marker([-7.808531241836583, 110.3546730557974], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko Esti - Snack & Klontong</b><br/>Jl. Letjen S.Parman No.15, Gedongkiwo, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55142<br><br> <img src="./pedagang/TokoEsti.png" style="width:200px"> ');
+
+const WarungSanto = L.marker([-7.8086636742472155, 110.3545967512208], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Santo</b><br/>Jl. Letjen S.Parman, Gedongkiwo, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55142<br><br> <img src="./pedagang/WarungSanto.png" style="width:200px"> ');
+
+const SRC69 = L.marker([-7.8080962643315495, 110.35162382015828], {icon: WarungSembakoIcon})
+.bindPopup('<b>SRC 69</b><br/>Jl. Letjen S.Parman No.69, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251<br><br> <img src="./pedagang/SRC69.png" style="width:200px"> ');
+
+const WarungMaduraPODEY = L.marker([-7.80733732855513, 110.34587080071455], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Madura (PODEY)</b><br/>Jl. Patangpuluhan No.37, Patangpuluhan, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55251<br><br> <img src="./pedagang/WarungMaduraPODEY.png" style="width:200px"> ');
+
+const MOEGAMART = L.marker([-7.806745480378603, 110.35043696653683], {icon: WarungSembakoIcon})
+.bindPopup('<b>MOEGA MART</b><br/>Jl. Kapten Piere Tendean No.58, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55252<br><br> <img src="./pedagang/MOEGAMART.png" style="width:200px"> ');
+
+const WarungKelontongBuTutut = L.marker([-7.8054673833563015, 110.34946457772548], {icon: WarungSembakoIcon})
+.bindPopup('<b>Warung Kelontong Bu Tutut</b><br/>Jl. Nakulo No.15, Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./pedagang/WarungKelontongBuTutut.png" style="width:200px"> ');
+
+const Toko49 = L.marker([-7.805151812402489, 110.3470297843711], {icon: WarungSembakoIcon})
+.bindPopup('<b>Toko 49</b><br/>Wirobrajan, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./pedagang/Toko49.png" style="width:200px"> ');
 
 
 
 
 
-const sembako = L.layerGroup([AlifMart, Rizky, SembakoSubur, Arba, PakBudi, SumberRejeki, Tio, TokoFWR, SRSembako, SCBN2, TokoBerasAcar, TokoBerasBuAtik, SembakoBuEvi, BayuSembako, TokoHafid, TokoKencana, BerasFanda, GyangSembako, WarungSembakoYulah, SRCSarwidjiMM, PengokJayaSRC, WarungSayurdanSembakoSumberPangan, TimohoJaya, DepotDagingMubarakah, MinimarketRRKios, TokoBasuki, WarungSayurMbakNop, TokoSembakoUDRiskoJaya, GrosirBuahSSA, TokoRayyaGrosir, ABSembako, DepotSusuSapiKambing, KiosBuahBuIda, TokoKelontongRizqiRuhi, TokoJuari, PondokBuahGlagahsari, JogjaBeef, TokoAneka, DepotDagingSapiBimoAsih, JuraganSayur29, GrosirBeras, WarungSembakoSRCBuTri, TokoSembakoPojok , SembakoEDEN88, CokroBerasGrosir, WarungBuSarjinah, UDMinyakBuMantri, SayurMayur24Jam, TokoBuMangun, SMSembako, WarungSR, JuraganSayur291, AbMartSegarPraktis, TokoMaduraADINDA, SembakoNadaPesanJaya, TokoSembakoCahayaPesanJayaII, TokoSRCAldi, TokoWahyuBuahPakIrfan, TokoSakura, TokoMurni, WaroengeAfi, WarungMoroSeneng, WarungSayurBuWarni, WarungMaduraLIMNY, WarungBuah, WarungKepokJogja, WarungMaduraDIPanjaitan1, WarungGGSPDalanWaras, WarungGayatri, WarsedaTokoKelontong, TokoBuahMentari, TokoMaduraAlHariqi, TokoFortuna, TokoIjo, TokoBuahMMAJaya, TokoBuHartoKranggan, TokoMbakSari, KiosBuPonirah, KiosBuSutini, KiosBuPur, TokoSinarJaya, TokoBerkahJaya, TokoKelontongPakdheNo, TokoKembarSembako, TokoZaki, WarungSayurTentrem, TokoEndro, TokoHanif, TokoBuAsmo, TokoKelontongWarungBagja, SRCGajahPutihMalioboro, BerkatMart, AbieSembako, TokoWaserdaQR, TokoMurniDemangan, TokoMilaDemangan, WarungBuAnjar, TokoAisyah, WarungFadasyi, WarungSayurBuYani, PupaMeatShopPrawirotaman, AJ33GrosirAyamdanTelur, BestMeatBugisan, BestMeatUmbulharjo, TokoPaijoBuah, WarungKelontongPakSaliman, WarungMaduraNayzila, TokoSRCAndaJaya, TokoSRCZeera, WarungSayurdanSembakoBarokah, SahlunBuah, NgoriSembako, ErlangSembako, MaduraSaladinShop, WarungSadeBuah, KiosGrosirBerasdanGulaGayatri, TokoNaningGGSP, TokoNurGGSP, FajarBroiler, GedeMart, TokoNayaPrenggan, SembakodanGasPojokKarangGGSP, KiosSembakoLadang, TokoSholeh, DepotAyamSegarBuKoes, NutriviaDepotIkanSegar, WarungMbakNurSayur, WarungIbuDjazuli, RikaSembako, TokoArdanSRC, TokoBuDarnoGGSP, WarungMaduraPutraFaizBarokah, TokoHarumDRP, WarungSayurAmpera, WarungMaduraRejowinangun, WarungATFG, WarungGanbate, WarungMaduraBarokah, MbahMardiBroiler, WarungMaduraDuaPutri, TokoNugroho, TokoAdindaSembakoMadura, WarungBuIs, TokoSembakoAJI06, WarungKelontongYuBun, ABSayur24Jam, WarungMadura, iSayurPrawirotaman, WarungMaduraCahayaBaru, TokoSumberSempurna, TokoAnanda2, TokoPodoRukunGGSP, WarungMaduraParangtritis, MirzaBuah, DepotBuAsiyah, BarrenJaya, TokoCahayaSRC, WarungSembakoYuJilah, WarungSayurBuEni, WarungAgus, TokoKunciBerkat, TokoGulaJawa, WarungHero, TokoRezaMadura, TokoPurnomo, MMBuah, TokoHaidarMadura, TokoSurono, AylaKrisnaBuah, KiosPojokPakDarno, WarungSayurSorogenen, WarungBuTri, WarungMadura24Jam, WarungSorogenen, TokoThemarBulendMadura, TokoBerkahJayaSorogenen, TokoSayurSorogenen, KedalABSayur24Jam, PrimaFreshmartSorogenen, WarungSembakoSorogenen, WarungSembakoSayurVRA, WarungHartiniGGSP, TokoKelontongRestuIbuSRC, TokoBuahNurAini, TokoSembakoPesanSumberJaya, TokoBerkahManfaat2, WarungSembakoSayuranBuItuk, TokoShonar4444Madura, WarungSembakoPawiro, TokoSari, WarungKelontongSMP, TokoCantika, PisangGrosirAyuniPusat, Toko32SRC, WarungMaduraSidikan, Toko53, TokoPanggih, TokoSayurBuAsih, WarungMaduraSidikan2, WarungFio, WarungMiniTibaUrip, WarungBuHarni, AgenGasLPGNogobondo, TokoKaruniaGGSP, TokoPudjoMulyonoSRC, WarungMalangan, WarungLestari, MaduraAdinda, WarungSayurBuWelas, TokoMbakIka, WarungMaduraNa, TokoLuput, WarungPakMulyadi, TokoLukito, MiniMallDelima, TokoBuImam, PorkerMeatshop, SmartMinimart, KiosBerasHarum, WarungMakSonem, WarungSayurBuSri, TokoSembako1160, TokoKelontongALBAROKAH3, SembakoBugisanKusuma, SembakoKu, DepotDagingAyamSegarPutraSuryaWijaya, TokoCastella24, TokoPapaEnzo, TokoIrmaGGSP, WarungBuDarmo, LuckManMadura, SayurSembakoBerkahIbu, TokoAdi, TokoSembakoJlBantul, TokoAyuAndiraBarokah6, TokoMinyakGorengCurah, TokoBudiJaya, TokoSembakoRamaJayaMadura, TokoTamansari, TokoSRC40, TokoSembakoBunga, TokoGunturSyifa, SembakoPatuk, KiosUnggasPathok, TokoKelontongMena, AriniToko, Toko45, TokoJihan, TokoRofita, DagingSapiBuNah, DagingSapiEmbunPagi, DagingSapiBuIta, ]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const sembako = L.layerGroup([AlifMart, Rizky, SembakoSubur, Arba, PakBudi, SumberRejeki, Tio, TokoFWR, SRSembako, SCBN2, TokoBerasAcar, TokoBerasBuAtik, SembakoBuEvi, BayuSembako, TokoHafid, TokoKencana, BerasFanda, GyangSembako, WarungSembakoYulah, SRCSarwidjiMM, PengokJayaSRC, WarungSayurdanSembakoSumberPangan, TimohoJaya, DepotDagingMubarakah, MinimarketRRKios, TokoBasuki, WarungSayurMbakNop, TokoSembakoUDRiskoJaya, GrosirBuahSSA, TokoRayyaGrosir, ABSembako, DepotSusuSapiKambing, KiosBuahBuIda, TokoKelontongRizqiRuhi, TokoJuari, PondokBuahGlagahsari, JogjaBeef, TokoAneka, DepotDagingSapiBimoAsih, JuraganSayur29, GrosirBeras, WarungSembakoSRCBuTri, TokoSembakoPojok , SembakoEDEN88, CokroBerasGrosir, WarungBuSarjinah, UDMinyakBuMantri, SayurMayur24Jam, TokoBuMangun, SMSembako, WarungSR, JuraganSayur291, AbMartSegarPraktis, TokoMaduraADINDA, SembakoNadaPesanJaya, TokoSembakoCahayaPesanJayaII, TokoSRCAldi, TokoWahyuBuahPakIrfan, TokoSakura, TokoMurni, WaroengeAfi, WarungMoroSeneng, WarungSayurBuWarni, WarungMaduraLIMNY, WarungBuah, WarungKepokJogja, WarungMaduraDIPanjaitan1, WarungGGSPDalanWaras, WarungGayatri, WarsedaTokoKelontong, TokoBuahMentari, TokoMaduraAlHariqi, TokoFortuna, TokoIjo, TokoBuahMMAJaya, TokoBuHartoKranggan, TokoMbakSari, KiosBuPonirah, KiosBuSutini, KiosBuPur, TokoSinarJaya, TokoBerkahJaya, TokoKelontongPakdheNo, TokoKembarSembako, TokoZaki, WarungSayurTentrem, TokoEndro, TokoHanif, TokoBuAsmo, TokoKelontongWarungBagja, SRCGajahPutihMalioboro, BerkatMart, AbieSembako, TokoWaserdaQR, TokoMurniDemangan, TokoMilaDemangan, WarungBuAnjar, TokoAisyah, WarungFadasyi, WarungSayurBuYani, PupaMeatShopPrawirotaman, AJ33GrosirAyamdanTelur, BestMeatBugisan, BestMeatUmbulharjo, TokoPaijoBuah, WarungKelontongPakSaliman, WarungMaduraNayzila, TokoSRCAndaJaya, TokoSRCZeera, WarungSayurdanSembakoBarokah, SahlunBuah, NgoriSembako, ErlangSembako, MaduraSaladinShop, WarungSadeBuah, KiosGrosirBerasdanGulaGayatri, TokoNaningGGSP, TokoNurGGSP, FajarBroiler, GedeMart, TokoNayaPrenggan, SembakodanGasPojokKarangGGSP, KiosSembakoLadang, TokoSholeh, DepotAyamSegarBuKoes, NutriviaDepotIkanSegar, WarungMbakNurSayur, WarungIbuDjazuli, RikaSembako, TokoArdanSRC, TokoBuDarnoGGSP, WarungMaduraPutraFaizBarokah, TokoHarumDRP, WarungSayurAmpera, WarungMaduraRejowinangun, WarungATFG, WarungGanbate, WarungMaduraBarokah, MbahMardiBroiler, WarungMaduraDuaPutri, TokoNugroho, TokoAdindaSembakoMadura, WarungBuIs, TokoSembakoAJI06, WarungKelontongYuBun, ABSayur24Jam, WarungMadura, iSayurPrawirotaman, WarungMaduraCahayaBaru, TokoSumberSempurna, TokoAnanda2, TokoPodoRukunGGSP, WarungMaduraParangtritis, MirzaBuah, DepotBuAsiyah, BarrenJaya, TokoCahayaSRC, WarungSembakoYuJilah, WarungSayurBuEni, WarungAgus, TokoKunciBerkat, TokoGulaJawa, WarungHero, TokoRezaMadura, TokoPurnomo, MMBuah, TokoHaidarMadura, TokoSurono, AylaKrisnaBuah, KiosPojokPakDarno, WarungSayurSorogenen, WarungBuTri, WarungMadura24Jam, WarungSorogenen, TokoThemarBulendMadura, TokoBerkahJayaSorogenen, TokoSayurSorogenen, KedalABSayur24Jam, PrimaFreshmartSorogenen, WarungSembakoSorogenen, WarungSembakoSayurVRA, WarungHartiniGGSP, TokoKelontongRestuIbuSRC, TokoBuahNurAini, TokoSembakoPesanSumberJaya, TokoBerkahManfaat2, WarungSembakoSayuranBuItuk, TokoShonar4444Madura, WarungSembakoPawiro, TokoSari, WarungKelontongSMP, TokoCantika, PisangGrosirAyuniPusat, Toko32SRC, WarungMaduraSidikan, Toko53, TokoPanggih, TokoSayurBuAsih, WarungMaduraSidikan2, WarungFio, WarungMiniTibaUrip, WarungBuHarni, AgenGasLPGNogobondo, TokoKaruniaGGSP, TokoPudjoMulyonoSRC, WarungMalangan, WarungLestari, MaduraAdinda, WarungSayurBuWelas, TokoMbakIka, WarungMaduraNa, TokoLuput, WarungPakMulyadi, TokoLukito, MiniMallDelima, TokoBuImam, PorkerMeatshop, SmartMinimart, KiosBerasHarum, WarungMakSonem, WarungSayurBuSri, TokoSembako1160, TokoKelontongALBAROKAH3, SembakoBugisanKusuma, SembakoKu, DepotDagingAyamSegarPutraSuryaWijaya, TokoCastella24, TokoPapaEnzo, TokoIrmaGGSP, WarungBuDarmo, LuckManMadura, SayurSembakoBerkahIbu, TokoAdi, TokoSembakoJlBantul, TokoAyuAndiraBarokah6, TokoMinyakGorengCurah, TokoBudiJaya, TokoSembakoRamaJayaMadura, TokoTamansari, TokoSRC40, TokoSembakoBunga, TokoGunturSyifa, SembakoPatuk, KiosUnggasPathok, TokoKelontongMena, AriniToko, Toko45, TokoJihan, TokoRofita, DagingSapiBuNah, DagingSapiEmbunPagi, DagingSapiBuIta, TokoAlIkhlaas, TokoManunggal2, SembakoEdelweiss, TokoPakIwan, FishGarage, WarungMerah, WarungSayurCantel, TokoKelontongPakEdi, WarungBuDwi, WarungMarley642, TokoFauzy, WarungMaduraFamily, MomonCellindoSRC, TokoMintoGGSP,  TokoSembakoMasAbdul, TokoDossis,  TokoGiyanto, TokoTukiman, TokoPakNardi, TokoBuahLancarAbadi, FrenzaMart, TokoBaru, LIAGroceryStore, VitaBroilerPemotonganAyam, MaduraTokoFitri, WarungBerkahBuRirinMinggiran, TokoBuNarti, KiosBerasGedongkuning, TokoSembakoLestariGiwangan, WarungBuArum, TokoSembakoRamiaMadura, TokoHarapanBaru, TokoEsti, WarungSanto, SRC69, WarungMaduraPODEY, MOEGAMART, WarungKelontongBuTutut, Toko49, SRCRina, HHMartDRP, ]);
 
 layerControl.addOverlay(sembako, 'Warung Sembako');
 
@@ -2470,6 +2688,8 @@ layerControl.addOverlay(sembako, 'Warung Sembako');
 
 
 
+
+<!-- Mall
 
 const GaleriaMall = L.marker([-7.782813165809494, 110.37910908542148], {icon: GaleriaIcons})
 .bindPopup('<b>Galeria Mall</b><br />Jl. Jend. Sudirman No.99-101, Terban, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55223<br>(0274)583661<br><br> <img src="./mall/GaleriaMall1.png" style="width:200px">');
@@ -2489,7 +2709,7 @@ const Gardena = L.marker([-7.783164671002617, 110.38118690482466], {icon: Garden
 
 const mall = L.layerGroup([GaleriaMall , LippoPlaza , PlazaMalioboro, RamaiMallMalioboro, Gardena]);
 
-layerControl.addOverlay(mall, 'Mall');
+layerControl.addOverlay(mall, 'Mall (5 Titik)');
 
 
 
@@ -2497,6 +2717,117 @@ layerControl.addOverlay(mall, 'Mall');
 
 
 <!-- SPPGIcons
+
+const SPPGTegalrejoKarangwaru = L.marker([-7.778634569887022, 110.3637173889591], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Karangwaru</b><br/>Yayasan : Nurul Ihsan<br>ID SPPG : XW1UKW2D<br>Jalan Robert Wolter Monginsidi 31, Karangwaru, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKarangwaru1.png" style="width:200px"> <img src="./sppg/SPPGTegalrejoKarangwaru2.png" style="width:200px"> ');
+
+const SPPGTegalrejoKricak = L.marker([-7.773155024021362, 110.3609600951737], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Kricak</b><br/>Yayasan : Arus Bawah Persada<br>ID SPPG : P3GDMSOG<br>Jalan Magelang 113-117, Kricak, Tegalrejo, Yogyakarta, Daerah Istimewa Yogyakarta 55241<br><br> <img src="./sppg/SPPGTegalrejoKricak.png" style="width:200px">');
+
+const SPPGTegalrejoTegalrejo = L.marker([-7.792061927626844, 110.35221735750939], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Tegalrejo Tegalrejo</b><br/>Yayasan : Mugi Berkah Lestari<br>ID SPPG : 1ZYRT6QI<br>Jl. Demakan Baru Gang Buntu Tr III No.802, Kec. Tegalrejo, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGTegalrejoTegalrejo.png" style="width:200px"> ');
+
+const SPPGJetisCokrodiningratan = L.marker([-7.776152513878174, 110.36852089006483], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Jetis Cokrodiningratan</b><br/>Yayasan : Serikat Putra Kertanegara<br>ID SPPG : QQDDRHVV<br>Gg. Jetisharjo No.267, Cokrodiningratan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55233<br><br> <img src="./sppg/SPPGJetisCokrodiningratan.png" style="width:200px"> ');
+
+const SPPGJetisGowongan = L.marker([-7.787218221400693, 110.3633211531409], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Jetis Gowongan</b><br/>Yayasan : Garuda Nusantara Indonesia Dua<br>ID SPPG : IKV84MOD<br>Jl. Gowongan Kidul No.46, Gowongan, Kec. Jetis, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGJetisGowongan.png" style="width:200px"> ');
+
+const SPPGGondokusumanKlitren = L.marker([-7.78199522336603, 110.38342286887385], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gondokusuman Klitren</b><br/>Yayasan : Pionir Pendidikan Indonesia<br>ID SPPG : SIPIQG6A<br>Jl. Iromejan No.10, Klitren, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGGondokusumanKlitren.png" style="width:200px"> ');
+
+const SPPGGondokusumanBaciro = L.marker([-7.793900691201159, 110.38086338220938], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gondokusuman Baciro</b><br/>Yayasan : Insan Saguh Jaya<br>ID SPPG : P8OUHDJI<br>Jl. Tunjung No.1, RT.028/RW.008, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55225<br><br> <img src="./sppg/SPPGGondokusumanBaciro.png" style="width:200px"> ');
+
+const SPPGGondokusumanBaciro2 = L.marker([-7.792187536378381, 110.38956650079997], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gondokusuman Baciro 2</b><br/>Yayasan : Yayasan Kumara Nusantara Jaya<br>ID SPPG : VLUWMZMD<br>Jl. Melati Wetan 44 Rt 054 Rw 014, Baciro, Kec. Gondokusuman, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGGondokusumanBaciro2.png" style="width:200px"> ');
+
+const SPPGDanurejanBausasran = L.marker([-7.796568571292736, 110.3752670669048], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Danurejan Bausasran</b><br/>Yayasan : Serikat Putra Kertanegara<br>ID SPPG : 3FL5A4UM<br>Jl. Bausasran Gg. Sido mulyo No.26, Bausasran, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55211<br><br> <img src="./sppg/SPPGDanurejanBausasran.png" style="width:200px"> ');
+
+const SPPGGedongtengenSosromenduran = L.marker([-7.788166551098704, 110.36285492059639], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gedongtengen Sosromenduran</b><br/>Yayasan : Bina Gizi Generasi Emas<br>ID SPPG : CR45JTY6<br>Jl. Kampung Sitisewu, Rt. 01 Rw. 01, Sosromenduran, Kec. Gedong Tengen, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGGedongtengenSosromenduran.png" style="width:200px"> ');
+
+const SPPGGedongtengenPringgokusuman = L.marker([-7.790559642550271, 110.36046289603988], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gedongtengen Pringgokusuman</b><br/>Yayasan : Insan Saguh Jaya<br>ID SPPG : 3VMM4HTM<br>Jalan Jlagran Nomor 16, Kelurahan Pringgokusuman, Kecamatan Gedong Tengen, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGGedongtengenPringgokusuman.png" style="width:200px"> ');
+
+const SPPGNgampilanNotoprajan2 = L.marker([-7.804014954235173, 110.3594690414584], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Ngampilan Notoprajan 2</b><br/>Yayasan : Persyarikatan Muhammadiyah<br>ID SPPG : C8CK0UN0<br>Jl. Suronatan No.42, Notoprajan, Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55262<br><br> <img src="./sppg/SPPGNgampilanNotoprajan2.png" style="width:200px"> ');
+
+const SPPGNgampilanNgampilan = L.marker([-7.800236952143307, 110.36006593181708], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Ngampilan Ngampilan</b><br/>Yayasan : Tirta Gizi Perkasa<br>ID SPPG : WN6F3OGY<br>Jl. Ngadiwinatan Ng 1/1298 Rt 63 Rw 12, Ngampilan, Kec. Ngampilan, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGNgampilanNgampilan.png" style="width:200px"> ');
+
+const SPPGNgampilanNgampilan3 = L.marker([-7.799298035650529, 110.35629747055475], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Ngampilan Ngampilan 3</b><br/>Yayasan : Garuda Nusantara Indonesia Dua<br>ID SPPG : DKPTJJTL<br>Jl. Letjend Suprapto No. 19 Kel. Ngampilan, Kec. Ngampilan, Kota Yogyakarta<br><br> <img src="./sppg/SPPGNgampilanNgampilan3.png" style="width:200px"> ');
+
+const SPPGWirobrajanWirobrajan = L.marker([-7.804105720346142, 110.34815156441614], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Wirobrajan Wirobrajan</b><br/>Yayasan : Jariyah Soetopo Sumihati<br>ID SPPG : BPZPLTNB<br>Jl. Arjuna No.30, Wirobrajan, Wirobrajan, Kota Yogyakarta<br><br> <img src="./sppg/SPPGWirobrajanWirobrajan1.png" style="width:200px"> <img src="./sppg/SPPGWirobrajanWirobrajan2.png" style="width:200px">');
+
+const SPPGWirobrajanPatangpuluhan = L.marker([-7.8106383192828845, 110.34962911001223], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Wirobrajan Patangpuluhan</b><br/>Yayasan : Insan Saguh Jaya<br>ID SPPG : KT0LS59E<br>Jl Bugisan No 38, Patangpuluhan, Wirobrajan, Kota Yogyakarta<br><br> <img src="./sppg/SPPGWirobrajanPatangpuluhan.png" style="width:200px"> ');
+
+const SPPGMantrijeronMantrijeron = L.marker([-7.820437250038042, 110.36519128112728], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Mantrijeron Mantrijeron</b><br/>Yayasan : Indonesia Food Security Review<br>ID SPPG : DM7ULJRY<br>Jl. Surami No. 845, Mantrijeron, Mantrijeron, Kota Yogyakarta, DIY<br><br> <img src="./sppg/SPPGMantrijeronMantrijeron.png" style="width:200px"> ');
+
+const SPPGMantrijeronSuryodiningratan = L.marker([-7.814030248893865, 110.36200169759371], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Mantrijeron Suryodiningratan</b><br/>Yayasan : -<br>ID SPPG : CS5VAVOR<br>Jl. MT. Haryono, Mantrijeron, Kec. Mantrijeron, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55143<br><br> <img src="./sppg/SPPGMantrijeronSuryodiningratan.png" style="width:200px"> ');
+
+const SPPGKratonPanembahan = L.marker([-7.806185705535781, 110.36798724926717], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Kraton Panembahan</b><br/>Yayasan : Kemala Bhayangkari<br>ID SPPG : WZ42SPFW<br>Jl. Mangunnegaran Kidul no.17, Panembahan, Kraton, Kota Yogyakarta<br><br> <img src="./sppg/SPPGKratonPanembahan.png" style="width:200px"> ');
+
+const SPPGKratonKadipaten = L.marker([-7.807535657513445, 110.35684986508589], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Kraton Kadipaten</b><br/>Yayasan : Serikat Putra Kertanegara<br>ID SPPG : MUC4MYOI<br>Jl. Basahan Kadipaten Kulon KP. I / 311, RT. 12, RW.04 Kelurahan Kadipaten, Kecamatan Kraton, Kota Yogyakarta 55132<br><br> <img src="./sppg/SPPGKratonKadipaten.png" style="width:200px"> ');
+
+const SPPGGondomananPrawirodirjan = L.marker([-7.807139543053613, 110.36978569064847], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gondomanan Prawirodirjan</b><br/>Yayasan : Insan Saguh Jaya<br>ID SPPG : GCYW5D5S<br>Jl.Brigjend Katamso No.90 Prawirodirjan,Gondomanan, Yogyakarta<br><br> <img src="./sppg/SPPGGondomananPrawirodirjan.png" style="width:200px"> ');
+
+const SPPGGondomananPrawirodirjan2 = L.marker([-7.803957180314025, 110.37041452274518], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gondomanan Prawirodirjan 2</b><br/>Yayasan : Bina Gizi Indonesia Emas<br>ID SPPG : VIDKMXYW<br>Jl. Lobaningratan No.5, Prawirodirjan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55121<br><br> <img src="./sppg/SPPGGondomananPrawirodirjan2.png" style="width:200px"> ');
+
+const SPPGGondomananPrawirodirjan3 = L.marker([-7.799135841554363, 110.3695356577993], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Gondomanan Prawirodirjan 3</b><br/>Yayasan : Insan Saguh Jaya<br>ID SPPG : V1NCO2HR<br>Jl. Mayor Suryotomo, Ngupasan, Kec. Gondomanan, Kota Yogyakarta, Daerah Istimewa Yogyakarta <br><br> <img src="./sppg/SPPGGondomananPrawirodirjan3.png" style="width:200px"> ');
+
+const SPPGPakualamanPurwokinanti = L.marker([-7.796977512096229, 110.37120029013346], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Pakualaman Purwokinanti</b><br/>Yayasan : Gerilya Panglima Besar Soedirman<br>ID SPPG : WLGYJLYC<br>Jl. Gajah Mada No.67, Purwokinanti, Pakualaman, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55166 (Parkir Belakang Jambuluwuk Malioboro Hotel)<br><br> <img src="./sppg/SPPGPakualamanPurwokinanti.png" style="width:200px"> ');
+
+const SPPGMergangsanKeparakan = L.marker([-7.811040433394366, 110.37418631973189], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Mergangsan Keparakan</b><br/>Yayasan : Makmur Pangan Sehat<br>ID SPPG : NPFKWNO2<br>Keparakan Lor RW 10, Mergangsan, Kota Yogyakarta<br><br> <img src="./sppg/SPPGMergangsanKeparakan.png" style="width:200px"> ');
+
+const SPPGUmbulharjoWarungboto3 = L.marker([-7.809823419812834, 110.39325964991524], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Umbulharjo Warungboto 3</b><br/>Yayasan : Asuco Batoro Jaya<br>ID SPPG : 0HFR3LEZ<br>Warungboto UH. 4/808, RT. 30, RW. 07, Kel. Warungboto,  Kec. Umbulharjo, Kota Yogyakarta<br><br> <img src="./sppg/SPPGUmbulharjoWarungboto3.png" style="width:200px"> ');
+
+const SPPGUmbulharjoPandeyan1 = L.marker([-7.819504313656857, 110.38860433566477], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Umbulharjo Pandeyan 1</b><br/>Yayasan : Widyatama Berkah Mandiri<br>ID SPPG : O6FI6KJB<br>Jl. Pramuka No 5f, Kel. Pandeyan, Kec. Umbulharjo, Kota Yogyakarta, Provinsi Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGUmbulharjoPandeyan1.png" style="width:200px"> ');
+
+const SPPGUmbulharjoPandeyan2 = L.marker([-7.813539546829557, 110.3863126018603], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Umbulharjo Pandeyan 2</b><br/>Yayasan : Widyatama Berkah Mandiri<br>ID SPPG : ECQEGS5Q<br>Jl. Pandeyan No. 20 Kec. Umbulharjo, Kota Yogyakarta<br><br> <img src="./sppg/SPPGUmbulharjoPandeyan2.png" style="width:200px"> ');
+
+const SPPGUmbulharjoPandeyan3 = L.marker([-7.818574593582068, 110.39378235035244], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Umbulharjo Pandeyan 3</b><br/>Yayasan : -<br>ID SPPG : -<br>Jl. Perintis Kemerdekaan No.85A, Pandeyan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55161<br><br> <img src="./sppg/SPPGUmbulharjoPandeyan3.png" style="width:200px"> ');
+
+const SPPGUmbulharjoSorosutan2 = L.marker([-7.820254986871039, 110.38535548022857], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Umbulharjo Sorosutan 2</b><br/>Yayasan : Limadua Bhakti Bangsa<br>ID SPPG : QEUDYMOU<br>Jl. Sidikan No.58, Sorosutan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55162<br><br> <img src="./sppg/SPPGUmbulharjoSorosutan2.png" style="width:200px"> ');
+
+const SPPGUmbulharjoGiwangan2 = L.marker([-7.826419837753469, 110.38803404743162], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Umbulharjo Giwangan 2</b><br/>Yayasan : Yayasan Pendidikan Bina Putra<br>ID SPPG : EE0M7F5O<br>Jl. Mendung Warih No.111, Giwangan, Kec. Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGUmbulharjoGiwangan2.png" style="width:200px"> ');
+
+const SPPGUmbulharjoMujaMuju = L.marker([-7.804859561703743, 110.39214448598746], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Umbulharjo Muja Muju</b><br/>Yayasan : Boga Indonesia Emas<br>ID SPPG : GTFOQMLN<br>Jl. Mondoliko, Muja Muju, Umbulharjo, Kota Yogyakarta, Daerah Istimewa Yogyakarta<br><br> <img src="./sppg/SPPGUmbulharjoMujaMuju.png" style="width:200px"> ');
+
+const SPPGKotagedeRejowinangun2 = L.marker([-7.8131331335087255, 110.39867522522523], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Kotagede Rejowinangun 2</b><br/>Yayasan : Sahabat Anak Nusa<br>ID SPPG : -<br>Jl. Retno Dumilah Jl. Masjid, Rejowinangun, Kec. Kotagede, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55171<br><br> <img src="./sppg/SPPGKotagedeRejowinangun2.png" style="width:200px"> ');
+
+const SPPGKotagedeRejowinangun = L.marker([-7.815874608984983, 110.39836131900255], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Kotagede Rejowinangun</b><br/>Yayasan : Dana Pendidikan Perkebunan<br>ID SPPG : 0LJHF6HG<br>Jl. Retno Dumilah No 31 B Rejowinangun, Kotagede, Kota Yogyakarta<br><br> <img src="./sppg/SPPGKotagedeRejowinangun.png" style="width:200px"> ');
+
+const SPPGDanurejanBausasran2 = L.marker([-7.7962720826974525, 110.37278071764817], {icon: SPPGIcons})
+.bindPopup('<b>SPPG Kota Yogyakarta Danurejan Bausasran 2</b><br/>Yayasan : -<br>ID SPPG : -<br>Jl. Hayam Wuruk No.8, Bausasran, Kec. Danurejan, Kota Yogyakarta, Daerah Istimewa Yogyakarta 55212<br><br> <img src="./sppg/SPPGDanurejanBausasran2.png" style="width:200px"> ');
+
+
+
+const sppg = L.layerGroup([SPPGTegalrejoKricak, SPPGTegalrejoKarangwaru, SPPGTegalrejoTegalrejo, SPPGJetisCokrodiningratan, SPPGJetisGowongan, SPPGGondokusumanKlitren, SPPGGondokusumanBaciro, SPPGGondokusumanBaciro2, SPPGDanurejanBausasran, SPPGGedongtengenSosromenduran, SPPGGedongtengenPringgokusuman, SPPGNgampilanNotoprajan2, SPPGNgampilanNgampilan, SPPGNgampilanNgampilan3, SPPGWirobrajanWirobrajan, SPPGWirobrajanPatangpuluhan, SPPGMantrijeronMantrijeron, SPPGMantrijeronSuryodiningratan, SPPGKratonPanembahan, SPPGKratonKadipaten, SPPGGondomananPrawirodirjan, SPPGGondomananPrawirodirjan2, SPPGGondomananPrawirodirjan3, SPPGPakualamanPurwokinanti, SPPGMergangsanKeparakan, SPPGUmbulharjoWarungboto3, SPPGUmbulharjoPandeyan1, SPPGUmbulharjoPandeyan2, SPPGUmbulharjoPandeyan3, SPPGUmbulharjoSorosutan2, SPPGUmbulharjoGiwangan2, SPPGUmbulharjoMujaMuju, SPPGKotagedeRejowinangun2, SPPGKotagedeRejowinangun, SPPGDanurejanBausasran2, ]);
+
+layerControl.addOverlay(sppg, 'SPPG (35 Titik)');
 
 
 
